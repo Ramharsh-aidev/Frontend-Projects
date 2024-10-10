@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+    transition: background 2s ease; /* Smooth transition for background color */
+}
+
+body.on {
+    background: radial-gradient(#eff2f3, #000000); /* Gradient effect when light is on */
+}
+
+.wire {
+    position: absolute;
+    left: calc(50% - 2px);
+    bottom: 50%;
+    height: 60vh;
+    width: 4px;
+    background: #000;
+    z-index: 1;
+}
+
+.bulb {
+    position: absolute;
+    top: 380px;
+    right: -38px;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    z-index: 2;
+}
+
+.bulb i {
+    font-size: 4rem;
+    color: #494848;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.switch {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border-radius: 45% 45% 45% 45%;
+    font-size: 3rem;
+    color: #ffffffb9;
+    background-color: #000;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for colors */
+}
+
+.switch.on {
+    color: #000;
+    background-color: #ffffffb9;
+}

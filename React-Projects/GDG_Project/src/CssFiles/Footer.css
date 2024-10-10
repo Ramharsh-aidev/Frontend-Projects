@@ -1,0 +1,148 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #6b73ff, #000dff);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.footer-left {
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-left img {
+    max-width: 150px;
+    height: auto;
+    margin: 20px;
+}
+
+.footer-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.location,
+.gmail,
+.social-media {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.location i,
+.gmail i,
+.social-media i {
+    font-size: 22px;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-media i {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.social-media i:hover {
+    color: #ffdd57;
+}
+
+.footer-right span {
+    line-height: 1.5;
+}
+
+/* Responsive styles */
+
+/* Medium screens (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-right {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Small screens (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .location,
+    .gmail,
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 479px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .location,
+    .gmail,
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right span {
+        font-size: 14px;
+    }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background: linear-gradient(135deg, #1a1a1a, #333);
+    }
+
+    .footer-right span {
+        color: #e7e7e7;
+    }
+}

@@ -1,0 +1,177 @@
+
+/* Navbar and it's constituent */
+.navbar{
+
+    background-color:#0a060e;
+    justify-content: space-evenly;
+    display: flex;
+    border-left: #0e0a1a;
+    padding-right: 0px;
+    margin: 0px;
+    padding: 30px;
+}
+a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+li{
+    list-style-type: none;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+/*main home page banner*/
+#banner{
+    height: 550px;
+    border-top: 0;
+    background-color: #0e0413;
+}
+
+
+/*music sign image*/
+img{
+    height: 550px;
+}
+
+/*Main search bar*/
+.search button {
+    background-color: #342666;
+    color: white;
+    padding: 10x 20px;
+    font-size: 25px;
+    position: relative;
+    left: 310px;
+    bottom: 58px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.search {
+    position: absolute;
+    top: 300px;
+    right: 360px;
+}
+
+/* body of index page css */
+.mix img,
+.mostpopular img {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 160px;
+    height: 170px;
+    margin: 10px;
+    border-style: outset;
+    border-radius: 65% 0% 44% 0% / 40% 67% 45% 2%;
+    box-shadow: 1em;
+    flex: 1;
+}
+.artists img {
+    justify-content: center;
+    width: 160px;
+    height: 170px;
+    margin: 10px;
+    border-style: inset;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    box-shadow: 1em;
+    flex: 1;
+}
+
+
+/*scroll button*/
+.mostpopular {
+    font-family: 'Bolt Bd BT';
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mix {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    flex-grow: 1;
+}
+
+.mix::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.mix a {
+    margin-right: 10px;
+    /* Adjust spacing between thumbnails */
+}
+
+.scroll-button {
+    flex-shrink: 0;
+    margin: 0 10px;
+    /* Adjust spacing between thumbnails and button */
+}
+
+.scroll-button.left {
+    order: -1;
+    /* Ensure the left button stays on the left */
+}
+
+
+
+
+/*Load more*/
+button{
+    border-radius: 80% 20% 80% 20% / 0% 100% 0% 100%;
+    background-color: #0d0d26;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*
+button:hover {
+background-color:rgb(61, 38, 114);
+color:rgb(15, 6, 34);
+} */
+
+
+/*Footer*/
+footer {
+
+    background-color: #0a060e;
+    justify-content: space-evenly;
+    display: flex;
+    margin: 0px;
+    padding: 30px;
+}
+a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+li {
+    list-style-type: none;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/*audio for playing song*/
+audio::-webkit-media-controls-panel {
+    background-color: #4E294C;
+    color: #f5f5f5;
+    border-radius: 100% 0% 100% 0% / 0% 100% 0% 100%;
+}
+audio{
+    align-items: center;
+    width: 100%;
+    right: 80px;
+}

@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  align-items: flex-end;
+  height: 40vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.circle {
+  width: 20vw;
+  height: 20vw;
+  max-width: 100px;
+  max-height: 100px;
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.2s ease;
+}
+
+.bar {
+  width: 20vw;
+  max-width: 100px;
+  border-radius: 13px;
+  transition: height 0.27s ease;
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .circle {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .bar {
+    width: 30vw;
+  }
+}

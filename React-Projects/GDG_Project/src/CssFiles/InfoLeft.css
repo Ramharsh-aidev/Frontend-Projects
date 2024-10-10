@@ -1,0 +1,94 @@
+.info-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.image-section img {
+    padding-right: 50px;
+    max-width: 60%;
+    height: auto;
+    margin-left: 100px;
+}
+
+.text-section {
+    flex: 1;
+    padding: 10px;
+    border-right: 2px solid green;
+}
+
+/* Responsive styles */
+
+/* Medium screens (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .info-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        padding-right: 0;
+    }
+
+    .image-section img {
+        max-width: 80%;
+    }
+
+    .text-section {
+        padding: 20px;
+    }
+}
+
+/* Small screens (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .info-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        padding-right: 0;
+    }
+
+    .image-section img {
+        max-width: 90%;
+    }
+
+    .text-section {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 479px) {
+    .info-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        padding-right: 0;
+    }
+
+    .image-section img {
+        max-width: 100%;
+    }
+
+    .text-section {
+        padding: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .info-left {
+        background-color: #333;
+        color: #fff;
+    }
+}

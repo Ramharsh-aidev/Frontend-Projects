@@ -1,0 +1,211 @@
+.technology-section {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    /* Ensure the section is positioned for z-index */
+}
+
+.section-heading {
+    font-size: 2em; /* Adjust size as needed */
+    margin-bottom: 0; /* No margin below the heading */
+    position: relative; /* For z-index stacking */
+    z-index: 2; /* Ensure heading is above the line */
+}
+
+.heading-line {
+    width: 100%; /* Full width */
+    height: 4px; /* Thickness */
+    background-color: red; /* Color */
+    margin: -5px auto 20px; /* Negative margin to overlap the heading */
+    z-index: 1; /* Place below the heading */
+    position: relative; /* Necessary for z-index to work */
+}
+
+.LineSetup {
+    display: flex; /* Use Flexbox for horizontal arrangement */
+    align-items: center; /* Center vertically */
+}
+
+.LineSetup hr {
+    flex: 1; /* Allow hr to take available space */
+    border: none; /* Remove default border */
+    height: 4px; /* Set height to 4px */
+    background-color: red; /* Set color to red */
+}
+
+.card-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+    justify-content: flex-start; /* Align cards to the start */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    cursor: pointer;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.tech-card {
+    flex: 1 0 calc(20% - 20px); /* Allow 5 cards with space for gaps */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card:hover {
+    background-color: #eee8e8;
+}
+
+.tech-card h2 {
+    margin: 10px 0;
+}
+
+.tech-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+[data-bs-theme="dark"] h2 {
+    color: #42464b;
+    /* Light gray text for dark theme */
+}
+
+.tech-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.tech-icon.android::before {
+    content: "🤖"; 
+}
+
+.tech-icon.flutter::before {
+    content: "📱"; 
+}
+
+.tech-icon.cloud::before {
+    content: "☁️"; 
+}
+
+.tech-icon.IT::before {
+    content: "🌐";
+}
+
+.arrow-down {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .tech-card {
+        flex: 1 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 400px) {
+    .tech-card {
+        flex: 1 0 100%; /* 1 card for very small screens */
+    }
+}
+.technology-section {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.section-heading {
+    font-size: 2em; /* Adjust size as needed */
+    margin: 0; /* Remove margin */
+    position: relative;
+    z-index: 2; /* Ensure heading is above the line */
+}
+
+.heading-line {
+    width: 100%; /* Full width */
+    height: 4px; /* Thickness */
+    background-color: red; /* Color */
+    margin: 10px auto 20px; /* Adjusted margin for vertical spacing */
+    z-index: 1; /* Place below the heading */
+    position: relative; /* Necessary for z-index to work */
+}
+
+.LineSetup {
+    display: flex; /* Use Flexbox for horizontal arrangement */
+    align-items: center; /* Center vertically */
+}
+
+.card-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+    justify-content: flex-start; /* Align cards to the start */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrollbar */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.card-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.tech-card {
+    flex: 1 0 calc(20% - 20px); /* Allow 5 cards with space for gaps */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card h2 {
+    margin: 10px 0;
+}
+
+.tech-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.tech-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.tech-icon.android::before {
+    content: "🤖"; /* Emoji representing Android */
+}
+
+.tech-icon.flutter::before {
+    content: "📱"; /* Emoji representing Flutter */
+}
+
+.tech-icon.cloud::before {
+    content: "☁️"; /* Emoji representing Cloud */
+}
+
+.arrow-down {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* For smaller screens, adjust max width to maintain responsiveness */
+@media (max-width: 600px) {
+    .tech-card {
+        flex: 1 0 calc(50% - 20px); /* 2 cards for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .tech-card {
+        flex: 1 0 100%; /* 1 card for very small screens */
+    }
+}

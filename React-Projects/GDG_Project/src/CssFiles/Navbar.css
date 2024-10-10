@@ -1,0 +1,256 @@
+.navbar {
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    background-color: #f8f9fa;
+    /* Light theme navbar background */
+    color: #343a40;
+    /* Dark gray text for light theme */
+    font-weight: 500;
+    /* Font weight */
+}
+
+/* Assuming your inner navbar has a class of 'navbar-brand' */
+.navbar-brand {
+    padding: 10px;
+    /* Default padding for light theme */
+}
+
+.navbar-brand img {
+    width: calc(100% - 20px);
+    /* Adjust width to exclude padding (10px on each side) */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure no extra space around the image */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .navbar-brand {
+        padding: 20px;
+        /* Increased padding for dark theme */
+    }
+
+    .navbar-brand img {
+        content: url('../components/GDGLogo.png');
+        /* Change to dark mode logo */
+    }
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #343a40;
+    /* Dark theme navbar background */
+    color: #e9ecef;
+    /* Light gray text for dark theme */
+    font-weight: 500;
+    /* Font weight */
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+.form-check-label i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+header {
+    background-color: #212529;
+    /* Dark gray background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: #e9ecef;
+    /* Light gray for header links */
+    text-decoration: none;
+}
+
+header img {
+    height: 80px;
+    margin-left: 40px;
+}
+
+main {
+    color: #e9ecef;
+    /* Light gray for main text */
+}
+
+button[type="submit"] {
+    background-color: #382bf0;
+    /* Vibrant purple for light theme */
+    color: #fff;
+    /* White text for button */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a32b1;
+    /* Darker purple for hover */
+}
+
+[data-bs-theme="dark"] {
+    background-color: #1c1c1e;
+    /* Darker background for dark theme */
+    color: #e9ecef;
+    /* Light gray text */
+}
+
+[data-bs-theme="dark"] .navbar-brand {
+    color: #e9ecef;
+    /* Light gray */
+    font-weight: 500;
+    /* Font weight */
+}
+
+[data-bs-theme="dark"] #navbarNav {
+    color: #e9ecef;
+    /* Light gray */
+    font-weight: 500;
+    /* Font weight */
+}
+
+[data-bs-theme="dark"] .nav-link {
+    color: #d1d1d1;
+    /* Slightly lighter gray for links */
+    font-size: large;
+    font-weight: 400;
+}
+
+[data-bs-theme="dark"] .nav-link:hover {
+    color: #ffffff;
+    /* White on hover */
+}
+
+[data-bs-theme="dark"] .form-check-label {
+    color: #e9ecef;
+    /* Light gray */
+}
+
+[data-bs-theme="dark"] .form-control {
+    background-color: #444;
+    /* Darker gray for form inputs */
+    color: #fff;
+    /* White text */
+    border-color: #555;
+    /* Lighter gray border */
+}
+
+[data-bs-theme="dark"] .btn-outline-success {
+    color: #e9ecef;
+    /* Light gray */
+    border-color: #e9ecef;
+    /* Light gray border */
+}
+
+[data-bs-theme="dark"] .btn-outline-success:hover {
+    background-color: #e9ecef;
+    /* Light gray background on hover */
+    color: #333;
+    /* Dark text */
+}
+
+[data-bs-theme="dark"] button[type="submit"] {
+    background-color: #5a32b1;
+    /* Darker purple for dark theme */
+}
+
+[data-bs-theme="dark"] button[type="submit"]:hover {
+    background-color: #6f42c1;
+    /* Vibrant purple on hover */
+}
+
+[data-bs-theme="light"] {
+    background-color: #ffffff;
+    /* White background for light theme */
+    color: #343a40;
+    /* Dark gray text */
+}
+
+[data-bs-theme="light"] .navbar-brand {
+    color: #000;
+    /* Black for brand */
+    font-weight: 500;
+    /* Font weight */
+}
+
+[data-bs-theme="light"] .nav-link {
+    color: #343a40;
+    /* Dark gray links */
+    font-size: large;
+    font-weight: 400;
+}
+
+[data-bs-theme="light"] .nav-link:hover {
+    color: #495057;
+    /* Slightly darker gray on hover */
+}
+
+[data-bs-theme="light"] .form-check-label {
+    color: #343a40;
+    /* Dark gray */
+}
+
+[data-bs-theme="light"] .form-control {
+    background-color: #fff;
+    /* White background */
+    color: #343a40;
+    /* Dark gray text */
+    border-color: #ced4da;
+    /* Light gray border */
+}
+
+[data-bs-theme="light"] .btn-outline-success {
+    color: #343a40;
+    /* Dark gray */
+    border-color: #343a40;
+    /* Dark gray border */
+}
+
+[data-bs-theme="light"] .btn-outline-success:hover {
+    background-color: #343a40;
+    /* Dark gray background on hover */
+    color: #fff;
+    /* White text */
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 60px;
+    }
+
+    header img {
+        height: 60px;
+        margin-left: 20px;
+    }
+
+    header li {
+        margin: 10px;
+    }
+
+    button[type="submit"] {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}

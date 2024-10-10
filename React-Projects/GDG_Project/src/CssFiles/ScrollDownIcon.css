@@ -1,0 +1,52 @@
+.scroll-down-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    animation: moveDown 2s infinite, colorChange 2s infinite;
+}
+
+.scroll-down-icon i {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #fff;
+    animation: moveDown 2s infinite, colorChange 2s infinite;
+}
+
+@keyframes moveDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+
+    50% {
+        color: #555;
+    }
+
+    100% {
+        color: #000;
+    }
+}
+
+.scroll-down-icon i:hover {
+    color: #555;
+}
+
+[data-bs-theme="dark"] .scroll-down-icon i {
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .scroll-down-icon i:hover {
+    color: #fff;
+}

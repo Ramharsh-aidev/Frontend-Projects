@@ -1,0 +1,53 @@
+body[data-bs-theme='light'] {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+body[data-bs-theme='dark'] {
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: inherit;
+    padding: 10px;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+}

@@ -1,0 +1,95 @@
+.hero-section {
+    padding: 50px 20px;
+}
+
+body[data-bs-theme="dark"] .hero-section {
+    background-color: #1c1c1e;
+}
+
+.hero-heading {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-heading span {
+    font-size: 48px;
+}
+
+.yellow {
+    color: #f9c24d;
+}
+
+.green {
+    color: #34a853;
+}
+
+.red {
+    color: #ea4335;
+}
+
+.blue {
+    color: #4285f4;
+}
+
+.black {
+    color: #000;
+    /* Black color */
+}
+
+.sub-heading {
+    font-size: 36px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #333;
+    /* Dark text for description */
+    margin-bottom: 30px;
+}
+
+.join-button {
+    background-color: #382bf0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    background-color: #5a32b1;
+}
+
+[data-bs-theme="dark"] .hero-description {
+    color: #e9ecef;
+    /* Light gray text for dark theme */
+}
+
+[data-bs-theme="dark"] .sub-heading {
+    color: #bdbfc2;
+    /* gray text for dark theme */
+}
+
+[data-bs-theme="dark"] .black {
+    color: #e9ecef;
+    /* Light gray text for dark theme */
+}
+
+[data-bs-theme="dark"] .join-button {
+    background-color: #5a32b1;
+    /* Darker blue for dark theme */
+}
+
+[data-bs-theme="dark"] .join-button:hover {
+    background-color: #382bf0;
+    /* Vibrant blue on hover */
+}

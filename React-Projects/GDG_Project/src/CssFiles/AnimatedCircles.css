@@ -1,0 +1,121 @@
+/* Add media queries to make the component responsive */
+
+.circles-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    /* Add flex-wrap to wrap circles on smaller screens */
+    flex-wrap: wrap;
+}
+
+.circle-wrapper {
+    text-align: center;
+    /* Add margin to create space between circles */
+    margin: 20px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: red;
+    border-right-color: yellow;
+    border-bottom-color: green;
+    border-left-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Add max-width to make circle responsive */
+    max-width: 100px;
+}
+
+.circle::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: red;
+    border-right-color: yellow;
+    border-bottom-color: green;
+    border-left-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 2s linear infinite;
+}
+
+.circle-text {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.circle-info {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Add media queries for different screen sizes */
+
+/* For small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .circles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .circle-wrapper {
+        margin: 10px;
+    }
+
+    .circle {
+        max-width: 80px;
+    }
+
+    .circle-text {
+        font-size: 16px;
+    }
+
+    .circle-info {
+        font-size: 12px;
+    }
+}
+
+/* For extra small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .circles-container {
+        padding: 10px;
+    }
+
+    .circle-wrapper {
+        margin: 5px;
+    }
+
+    .circle {
+        max-width: 60px;
+    }
+
+    .circle-text {
+        font-size: 14px;
+    }
+
+    .circle-info {
+        font-size: 10px;
+    }
+}
+
+/* Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

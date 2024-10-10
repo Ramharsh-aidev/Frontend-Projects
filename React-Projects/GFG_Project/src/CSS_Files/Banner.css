@@ -1,0 +1,73 @@
+.banner {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /* background-color: white; */
+    /* Adjust as needed */
+    padding: 20px;
+    width: 100%;
+    /* Make it responsive */
+    max-width: 600px;
+    /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.intro-box {
+    background-color: #f0f0f0;
+    /* Light gray background */
+    padding: 10px;
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 20px;
+}
+
+.intro-box p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #28a745;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10% 10% 10% 10%;
+}
+
+button:hover {
+    background-color: #32d859;
+}
+
+@media (max-width: 600px) {
+    .banner {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
