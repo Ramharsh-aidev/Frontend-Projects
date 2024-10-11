@@ -41,7 +41,7 @@
 
 /* Styling for the individual code editor sections */
 .code-editor-section {
-    flex: 1 1 300px;
+    flex: 1 1 300px 600px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 12px;

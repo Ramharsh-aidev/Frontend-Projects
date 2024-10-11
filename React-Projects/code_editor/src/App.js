@@ -11,24 +11,27 @@ const App = () => {
         {
             title: 'HTML',
             logo: htmlLogo,
-            content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Hi friend, try edit me!</h1>\n</body>\n</html>'
+            content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Hi friend, try edit me!</h1>\n</body>\n</html>',
+            color: 'red'
         },
         {
             title: 'CSS',
             logo: cssLogo,
-            content: 'body { background-color: #f0f0f0; }\nh1 { color: #333; text-align: center; }'
+            content: 'body { background-color: #f0f0f0; }\nh1 { color: #333; text-align: center; }',
+            color: 'blue'
         },
         {
             title: 'JavaScript',
             logo: jsLogo,
-            content: 'console.log("Hello, world!");'
+            content: 'console.log("Hello, world!");',
+            color: 'yellow'
         }
     ];
 
     const [sections, setSections] = useState(initialSections);
 
-    const addSection = (title, logo) => {
-        setSections([...sections, { title, logo, content: '' }]);
+    const addSection = (title, logo, color) => {
+        setSections([...sections, { title, logo, content: '', color }]);
     };
 
     const updateContent = (title, newContent) => {
@@ -58,7 +61,6 @@ const App = () => {
     return (
         <div className="App">
             <Navbar />
-            <h1>Code Editor</h1>
             <CodeEditor sections={sections} addSection={addSection} updateContent={updateContent} />
             <div className="output-area">
                 <h2>Output:</h2>
