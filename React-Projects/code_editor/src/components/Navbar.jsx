@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS_Files/Navbar.css';
-import GFGNavbarLogo from '../Images/ScriptNest-logo.png';
+import ScriptNext from '../Images/ScriptNest-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="/">
-                <img src={GFGNavbarLogo} alt="Logo" />
+                <img src={ScriptNext} alt="Logo" />
             </a>
             <button
                 className="navbar-toggler"
