@@ -12,38 +12,39 @@ const App = () => {
             title: 'HTML',
             logo: htmlLogo,
             content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Jai Shri Ram</h1>\n</body>\n</html>',
-            color: 'red'
+            color: '#ff6969' // Updated color for HTML
         },
         {
             title: 'CSS',
             logo: cssLogo,
             content: 'body { background-color: #f0f0f0; }\nh1 { color: #333; text-align: center; }',
-            color: 'blue'
+            color: '#6e8cfa' // Updated color for CSS
         },
         {
             title: 'JavaScript',
             logo: jsLogo,
             content: 'console.log("Hello, world!");',
-            color: 'yellow'
+            color: '#eed548' // Updated color for JavaScript
         }
     ];
 
     const [sections, setSections] = useState(initialSections);
     const [customSections, setCustomSections] = useState([]);
     const [activeSection, setActiveSection] = useState(initialSections[0].title);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const addSection = () => {
-        if (customSections.length < 2) {
+        if (customSections.length < 3) {
             const newSectionIndex = customSections.length + 1;
             const newSection = {
-                title: `Custom Section ${newSectionIndex}`,
+                title: `Note ${newSectionIndex}`, // Updated section title
                 logo: '',
                 content: '',
-                color: 'purple'
+                color: '#ff8949'
             };
             setCustomSections([...customSections, newSection]);
         } else {
-            alert("You can only add up to 2 custom sections.");
+            alert("You can only add up to 3 note sections.");
         }
     };
 
@@ -53,6 +54,10 @@ const App = () => {
 
         setSections(sections.map(updateSection));
         setCustomSections(customSections.map(updateSection));
+    };
+
+    const deleteCustomSection = (title) => {
+        setCustomSections(customSections.filter(section => section.title !== title));
     };
 
     const generateOutput = () => {
@@ -75,15 +80,24 @@ const App = () => {
         `;
     };
 
+    const toggleSidebar = () => {
+        setIsSidebarOpen(prev => !prev);
+    };
+
     return (
         <div className="App">
-            <Navbar /><hr></hr>
+            <Navbar /><hr style={{margin:0}}/><br/>
+            <button onClick={toggleSidebar} className="toggle-sidebar-btn">
+                {isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}
+            </button>
             <CodeEditor 
                 sections={[...sections, ...customSections]} 
                 addSection={addSection} 
                 updateContent={updateContent} 
+                deleteCustomSection={deleteCustomSection} 
                 activeSection={activeSection}
                 setActiveSection={setActiveSection} 
+                isSidebarOpen={isSidebarOpen}
             />
             <div className="output-area">
                 <h2>Output:</h2>
