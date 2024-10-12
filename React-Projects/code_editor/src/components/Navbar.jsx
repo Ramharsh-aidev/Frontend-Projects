@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS_Files/Navbar.css';
-import GFGNavbarLogo from '../Images/css-logo.png';
+import GFGNavbarLogo from '../Images/ScriptNest-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 

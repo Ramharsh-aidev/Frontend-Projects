@@ -12,19 +12,19 @@ const App = () => {
             title: 'HTML',
             logo: htmlLogo,
             content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Jai Shri Ram</h1>\n</body>\n</html>',
-            color: '#ff6969' // Updated color for HTML
+            color: '#ff3333'
         },
         {
             title: 'CSS',
             logo: cssLogo,
-            content: 'body { background-color: #f0f0f0; }\nh1 { color: #333; text-align: center; }',
-            color: '#6e8cfa' // Updated color for CSS
+            content: 'body {\n background-color: #f0f0f0; \n}\nh1 {\n color: #333;\n text-align: center;\n}',
+            color: '#5f6deb'
         },
         {
             title: 'JavaScript',
             logo: jsLogo,
             content: 'console.log("Hello, world!");',
-            color: '#eed548' // Updated color for JavaScript
+            color: '#eed548'
         }
     ];
 
@@ -37,7 +37,7 @@ const App = () => {
         if (customSections.length < 3) {
             const newSectionIndex = customSections.length + 1;
             const newSection = {
-                title: `Note ${newSectionIndex}`, // Updated section title
+                title: `Note ${newSectionIndex}`,
                 logo: '',
                 content: '',
                 color: '#ff8949'
@@ -100,7 +100,7 @@ const App = () => {
                 isSidebarOpen={isSidebarOpen}
             />
             <div className="output-area">
-                <h2>Output:</h2>
+                <span style={{width:100}}><h2 style={{textAlign:'center', fontFamily:'Algerian', color:'Highlight'}}>Output</h2></span>
                 <iframe
                     title="output"
                     srcDoc={generateOutput()}

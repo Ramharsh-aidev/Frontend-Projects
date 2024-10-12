@@ -37,12 +37,12 @@ body[data-bs-theme='dark'] {
 }
 
 .btn-outline-success {
-    color: #28a745;
-    border-color: #28a745;
+    color: #b58ed4;
+    border-color: #52038e;
 }
 
 .btn-outline-success:hover {
-    background-color: #28a745;
+    background-color: #360060;
     color: #fff;
 }
 
