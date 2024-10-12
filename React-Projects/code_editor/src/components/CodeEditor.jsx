@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS_Files/CodeEditor.css'
+import '../CSS_Files/CodeEditor.css';
 
 const CodeEditor = ({ sections = [], addSection, updateContent }) => {
     return (
@@ -10,7 +10,7 @@ const CodeEditor = ({ sections = [], addSection, updateContent }) => {
                 </button>
             </div>
             <div className="editor-sections">
-                {sections.map(section => (
+                {sections.map((section) => (
                     <div key={section.title} className="code-editor-section" style={{ backgroundColor: section.color }}>
                         <h2 className="section-title">{section.title}</h2>
                         <img src={section.logo} alt={`${section.title} logo`} className="section-logo" />

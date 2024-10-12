@@ -35,42 +35,41 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Allows vertical scrolling */
     padding: 10px;
 }
 
 /* Styling for the individual code editor sections */
 .code-editor-section {
-    flex: 1 1 300px 600px;
+    flex: 1 1 300px; /* Minimum width */
+    max-width: 400px; /* Maximum width */
     margin: 10px;
-    border: 1px solid #ccc;
     border-radius: 12px;
     padding: 15px;
-    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
 .code-editor-section:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo styling */
 .section-logo {
     width: 40px;
     height: 40px;
-    margin-bottom: 10px;
+    margin: 0 auto 10px; /* Center logo */
 }
 
 /* Title styling */
 h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center; /* Center title */
     font-size: 26px;
-    margin: 0;
+    margin: 0 0 10px;
     color: #007bff;
 }
 
