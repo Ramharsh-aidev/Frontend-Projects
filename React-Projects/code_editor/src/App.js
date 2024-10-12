@@ -11,7 +11,7 @@ const App = () => {
         {
             title: 'HTML',
             logo: htmlLogo,
-            content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Hi friend, try edit me!</h1>\n</body>\n</html>',
+            content: '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Document</title>\n</head>\n<body>\n<h1>Jai Shri Ram</h1>\n</body>\n</html>',
             color: 'red'
         },
         {
@@ -29,21 +29,37 @@ const App = () => {
     ];
 
     const [sections, setSections] = useState(initialSections);
+    const [customSections, setCustomSections] = useState([]);
+    const [activeSection, setActiveSection] = useState(initialSections[0].title);
 
-    const addSection = (title, logo, color) => {
-        setSections([...sections, { title, logo, content: '', color }]);
+    const addSection = () => {
+        if (customSections.length < 2) {
+            const newSectionIndex = customSections.length + 1;
+            const newSection = {
+                title: `Custom Section ${newSectionIndex}`,
+                logo: '',
+                content: '',
+                color: 'purple'
+            };
+            setCustomSections([...customSections, newSection]);
+        } else {
+            alert("You can only add up to 2 custom sections.");
+        }
     };
 
     const updateContent = (title, newContent) => {
-        setSections(sections.map(section => 
-            section.title === title ? { ...section, content: newContent } : section
-        ));
+        const updateSection = (section) => 
+            section.title === title ? { ...section, content: newContent } : section;
+
+        setSections(sections.map(updateSection));
+        setCustomSections(customSections.map(updateSection));
     };
 
     const generateOutput = () => {
         const htmlContent = sections.find(section => section.title === 'HTML')?.content || '';
         const cssContent = sections.find(section => section.title === 'CSS')?.content || '';
         const jsContent = sections.find(section => section.title === 'JavaScript')?.content || '';
+        const customContent = customSections.map(section => section.content).join('\n');
 
         return `
             <html>
@@ -52,6 +68,7 @@ const App = () => {
             </head>
             <body>
                 ${htmlContent}
+                ${customContent}
                 <script>${jsContent}</script>
             </body>
             </html>
@@ -60,8 +77,14 @@ const App = () => {
 
     return (
         <div className="App">
-            <Navbar />
-            <CodeEditor sections={sections} addSection={addSection} updateContent={updateContent} />
+            <Navbar /><hr></hr>
+            <CodeEditor 
+                sections={[...sections, ...customSections]} 
+                addSection={addSection} 
+                updateContent={updateContent} 
+                activeSection={activeSection}
+                setActiveSection={setActiveSection} 
+            />
             <div className="output-area">
                 <h2>Output:</h2>
                 <iframe
