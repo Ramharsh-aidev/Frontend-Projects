@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Boxes</title>
+    <link rel="stylesheet" href="../CSS_Files/LinkedListAnimation.css">
+</head>
+
+<body>
+    <div class="controls">
+        <input type="number" id="addInput" placeholder="Enter number to add">
+        <input type="number" id="addIndexInput" placeholder="Enter index to add (optional)">
+        <button onclick="addBoxAtIndex()">Add Node</button>
+    </div>
+    <div class="controls">
+        <input type="number" id="deleteInput" placeholder="Enter index to delete (optional)">
+        <button onclick="deleteBox()">Delete Node</button>
+    </div>
+    <div id="container"></div>
+    <script src="../JavaScript_Files/LinkedListScript.js"></script>
+</body>
+
+</html>
