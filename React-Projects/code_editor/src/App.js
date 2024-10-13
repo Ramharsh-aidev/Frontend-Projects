@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import CodeEditor from './components/CodeEditor';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import AboutUs from './components/AboutUs';
 import htmlLogo from './Images/html-logo.png';
 import cssLogo from './Images/css-logo.png';
 import jsLogo from './Images/js-logo.png';
@@ -109,7 +110,8 @@ const App = () => {
 
                 <Routes>
                     <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} /> {/* Added Sign Up route */}
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/about" element={<AboutUs />} />
                     <Route path="/" element={
                         <>
                             <button onClick={toggleSidebar} className="toggle-sidebar-btn" aria-label={isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}>
