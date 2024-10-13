@@ -45,11 +45,13 @@ const Navbar = () => {
                         <a className="nav-link" href="/Open App">Open App</a>
                     </li>
                 </ul>
-                <form className="d-flex me-4">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div className="form-check form-switch">
+                <div className="me-2">
+                    <a className="btn btn-primary" href="/login">Login</a>
+                </div>
+                <div>
+                    <a className="btn btn-success" href="/signup">Sign Up</a>
+                </div>
+                <div className="form-check form-switch ms-3">
                     <input
                         className="form-check-input"
                         type="checkbox"

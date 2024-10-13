@@ -14,7 +14,6 @@ body[data-bs-theme='dark'] {
     align-items: center;
     padding: 1rem;
     background-color: inherit;
-    padding: 10px;
 }
 
 .navbar-brand img {
@@ -32,18 +31,36 @@ body[data-bs-theme='dark'] {
     color: inherit;
 }
 
+.nav-item:hover .nav-link {
+    color: #ff8949;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
 .form-check-input {
     cursor: pointer;
 }
 
-.btn-outline-success {
-    color: #b58ed4;
-    border-color: #52038e;
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
-.btn-outline-success:hover {
-    background-color: #360060;
+.btn-success {
     color: #fff;
+    background-color: #340065;
+    border-color: #6e28a7;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success:hover {
+    background-color: #6f1daa;
 }
 
 @media (max-width: 768px) {

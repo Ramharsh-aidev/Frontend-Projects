@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet for SEO
+import { Helmet } from 'react-helmet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import CodeEditor from './components/CodeEditor';
@@ -102,7 +102,7 @@ const App = () => {
             </Helmet>
             <Navbar /><hr style={{margin:0}}/><br/>
             <button onClick={toggleSidebar} className="toggle-sidebar-btn" aria-label={isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}>
-                {isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}
+                {isSidebarOpen ? 'Hide Menu' : 'Show Menu'}
             </button>
             <CodeEditor 
                 sections={[...sections, ...customSections]} 

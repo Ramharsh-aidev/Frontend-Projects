@@ -168,6 +168,8 @@ textarea::placeholder {
 @media (max-width: 768px) {
     .code-editor-container {
         flex-direction: column;
+        width: 98%;
+        height: 40rem;
     }
     
     .sidebar {
@@ -178,6 +180,6 @@ textarea::placeholder {
     }
     
     .toggle-sidebar-btn {
-        width: 100%;
+        width: 96%;
     }
 }
