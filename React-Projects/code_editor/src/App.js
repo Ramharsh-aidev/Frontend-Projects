@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update the import here
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import CodeEditor from './components/CodeEditor';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 import htmlLogo from './Images/html-logo.png';
 import cssLogo from './Images/css-logo.png';
 import jsLogo from './Images/js-logo.png';
@@ -86,44 +89,56 @@ const App = () => {
     };
 
     return (
-        <div className="App">
-            <Helmet>
-                <title>Online Code Editor - Compile HTML, CSS, and JavaScript</title>
-                <meta name="description" content="An online compiler and code editor for HTML, CSS, and JavaScript with a user-friendly interface." />
-                <meta name="keywords" content="code editor, online compiler, IDE, HTML, CSS, JavaScript" />
-                <meta name="author" content="Your Name" />
-                <meta property="og:title" content="Online Code Editor" />
-                <meta property="og:description" content="An online compiler and code editor for web technologies." />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content={window.location.href} />
-                <meta property="twitter:title" content="Online Code Editor" />
-                <meta property="twitter:description" content="An online compiler and code editor for web technologies." />
-                <meta property="twitter:card" content="summary_large_image" />
-            </Helmet>
-            <Navbar /><hr style={{margin:0}}/><br/>
-            <button onClick={toggleSidebar} className="toggle-sidebar-btn" aria-label={isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}>
-                {isSidebarOpen ? 'Hide Menu' : 'Show Menu'}
-            </button>
-            <CodeEditor 
-                sections={[...sections, ...customSections]} 
-                addSection={addSection} 
-                updateContent={updateContent} 
-                deleteCustomSection={deleteCustomSection} 
-                activeSection={activeSection}
-                setActiveSection={setActiveSection} 
-                isSidebarOpen={isSidebarOpen}
-            />
-            <div className="output-area">
-                <h2 style={{textAlign:'center', fontFamily:'Algerian', color:'Highlight'}}>Output</h2>
-                <iframe
-                    title="output"
-                    srcDoc={generateOutput()}
-                    sandbox="allow-scripts"
-                    style={{ width: '100%', height: '300px', border: '1px solid #ccc' }}
-                    loading="lazy"
-                />
+        <Router>
+            <div className="App">
+                <Helmet>
+                    <title>Online Code Editor - Compile HTML, CSS, and JavaScript</title>
+                    <meta name="description" content="An online compiler and code editor for HTML, CSS, and JavaScript with a user-friendly interface." />
+                    <meta name="keywords" content="code editor, online compiler, IDE, HTML, CSS, JavaScript" />
+                    <meta name="author" content="Your Name" />
+                    <meta property="og:title" content="Online Code Editor" />
+                    <meta property="og:description" content="An online compiler and code editor for web technologies." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={window.location.href} />
+                    <meta property="twitter:title" content="Online Code Editor" />
+                    <meta property="twitter:description" content="An online compiler and code editor for web technologies." />
+                    <meta property="twitter:card" content="summary_large_image" />
+                </Helmet>
+                <Navbar />
+                <hr style={{ margin: 0 }} /><br />
+
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} /> {/* Added Sign Up route */}
+                    <Route path="/" element={
+                        <>
+                            <button onClick={toggleSidebar} className="toggle-sidebar-btn" aria-label={isSidebarOpen ? 'Hide Sidebar' : 'Show Sidebar'}>
+                                {isSidebarOpen ? 'Hide Menu' : 'Show Menu'}
+                            </button>
+                            <CodeEditor
+                                sections={[...sections, ...customSections]}
+                                addSection={addSection}
+                                updateContent={updateContent}
+                                deleteCustomSection={deleteCustomSection}
+                                activeSection={activeSection}
+                                setActiveSection={setActiveSection}
+                                isSidebarOpen={isSidebarOpen}
+                            />
+                            <div className="output-area">
+                                <h2 style={{ textAlign: 'center', fontFamily: 'Algerian', color: 'Highlight' }}>Output</h2>
+                                <iframe
+                                    title="output"
+                                    srcDoc={generateOutput()}
+                                    sandbox="allow-scripts"
+                                    style={{ width: '100%', height: '300px', border: '1px solid #ccc' }}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </>
+                    } />
+                </Routes>
             </div>
-        </div>
+        </Router>
     );
 };
 

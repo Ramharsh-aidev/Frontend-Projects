@@ -3,6 +3,7 @@ import '../CSS_Files/Navbar.css';
 import ScriptNext from '../Images/ScriptNest-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
     const [theme, setTheme] = useState('light');
@@ -36,20 +37,20 @@ const Navbar = () => {
             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul className="navbar-nav me-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Home</a>
+                        <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/events">About Us</a>
+                        <Link className="nav-link" to="/events">About Us</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/Open App">Open App</a>
+                        <Link className="nav-link" to="/Open App">Open App</Link>
                     </li>
                 </ul>
                 <div className="me-2">
-                    <a className="btn btn-primary" href="/login">Login</a>
+                    <Link className="btn btn-primary" to="/login">Login</Link>
                 </div>
                 <div>
-                    <a className="btn btn-success" href="/signup">Sign Up</a>
+                    <Link className="btn btn-success" to="/signup">Sign Up</Link>
                 </div>
                 <div className="form-check form-switch ms-3">
                     <input
