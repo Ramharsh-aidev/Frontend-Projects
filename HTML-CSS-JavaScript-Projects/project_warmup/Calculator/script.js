@@ -1,4 +1,3 @@
-// Initialize variables
 let currentInput = '';
 let previousInput = '';
 let operator = '';

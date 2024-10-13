@@ -10,11 +10,11 @@ body {
     align-items: center;
     min-height: 100vh;
     background: #222;
-    transition: background 2s ease; /* Smooth transition for background color */
+    transition: background 2s ease;
 }
 
 body.on {
-    background: radial-gradient(#eff2f3, #000000); /* Gradient effect when light is on */
+    background: radial-gradient(#eff2f3, #000000); /* Gradient effect for light on */
 }
 
 .wire {
@@ -57,7 +57,6 @@ body.on {
     cursor: pointer;
     z-index: 3;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for colors */
 }
 
 .switch.on {
