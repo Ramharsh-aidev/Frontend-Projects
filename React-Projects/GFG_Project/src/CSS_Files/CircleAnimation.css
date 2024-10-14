@@ -40,6 +40,10 @@
     width: 30vw;
     height: 30vw;
   }
+ 
+  body{
+    padding: 20px;
+  }
 
   .bar {
     width: 30vw;
