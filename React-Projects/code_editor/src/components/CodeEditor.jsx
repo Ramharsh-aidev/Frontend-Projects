@@ -14,7 +14,7 @@ const CodeEditor = ({ sections = [], addSection, updateContent, deleteCustomSect
                         <div key={index} className="section-item">
                             <button 
                                 onClick={() => setActiveSection(section.title)} 
-                                style={{ backgroundColor: section.color }} // Set button color
+                                style={{ backgroundColor: section.color }}
                             >
                                 {section.title}
                             </button>
