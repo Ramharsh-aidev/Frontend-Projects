@@ -69,7 +69,7 @@ const App = () => {
         const htmlContent = sections.find(section => section.title === 'HTML')?.content || '';
         const cssContent = sections.find(section => section.title === 'CSS')?.content || '';
         const jsContent = sections.find(section => section.title === 'JavaScript')?.content || '';
-        const customContent = customSections.map(section => section.content).join('\n');
+        // const customContent = customSections.map(section => section.content).join('\n');
 
         return `
             <html>
@@ -78,7 +78,6 @@ const App = () => {
             </head>
             <body>
                 ${htmlContent}
-                ${customContent}
                 <script>${jsContent}</script>
             </body>
             </html>
