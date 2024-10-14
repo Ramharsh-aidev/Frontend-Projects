@@ -1,7 +1,6 @@
-// src/components/Features.jsx
 import React from 'react';
-import '../CSS_Files/Features.css'; // Import your CSS file
-import feature1 from '../Images/Feature1.png'; // Update the extension if needed
+import '../CSS_Files/Features.css';
+import feature1 from '../Images/Feature1.png';
 import feature2 from '../Images/Feature2.png';
 import feature3 from '../Images/Feature3.png';
 import feature4 from '../Images/Feature4.png';

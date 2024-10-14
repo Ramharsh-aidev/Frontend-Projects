@@ -3,22 +3,16 @@
     left: 0;
     top: 0;
     z-index: -1;
-    /* background-color: white; */
-    /* Adjust as needed */
     padding: 20px;
     width: 100%;
-    /* Make it responsive */
     max-width: 600px;
-    /* Adjust as needed */
     box-sizing: border-box;
 }
 
 .intro-box {
     background-color: #f0f0f0;
-    /* Light gray background */
     padding: 10px;
     border-radius: 5px;
-    /* Rounded corners */
     margin-bottom: 20px;
 }
 
