@@ -32,28 +32,33 @@ button:hover {
     background-color: #7e61e9;
 }
 
-#container {
+#linkedList {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    /* Prevents wrapping to a new line */
+    gap: 20px;
+    /* Space between nodes */
 }
 
-.box {
+.node {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
+    /* Increased padding for better appearance */
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.box input {
-    margin-right: 10px;
+    min-width: 50px;
+    /* Minimum width for nodes */
+    max-width: 100px;
+    /* Maximum width for nodes */
+    text-align: center;
+    /* Center text within the node */
 }
 
 .arrow {
