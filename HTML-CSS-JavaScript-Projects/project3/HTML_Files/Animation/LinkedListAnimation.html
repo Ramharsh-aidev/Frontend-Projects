@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedList Visualization</title>
+    <link rel="stylesheet" href="../../CSS_Files/LinkedListAnimation.css">
+</head>
+
+<body>
+
+    <h3>Add node at last Position</h3>
+
+    <div class="controls">
+        <input type="number" id="nodeInput" placeholder="Enter number" />
+        <button onclick="addNode()">Add Node</button>
+    </div>
+
+    <h3>Insert Node At Position</h3>
+    <div class="controls">
+        <input type="number" id="insertInput" placeholder="Enter number to insert" />
+        <input type="number" id="positionInput" placeholder="Position" />
+        <button onclick="insertNode()">Insert Node</button>
+    </div>
+
+    <h3>Delete Node</h3>
+    <div class="controls">
+        <input type="number" id="deleteInput" placeholder="Position to delete" />
+        <button onclick="deleteNode()">Delete Node</button>
+    </div>
+
+    <div id="linkedList"></div>
+
+    <script src="../../JavaScript_Files/LinkedList.js"></script>
+</body>
+
+</html>
+
