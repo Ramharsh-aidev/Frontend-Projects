@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <!-- Title Section -->
+        <div class="text-center fix-spacing" style="margin-bottom: 20px;">
+            <h1 id="hash-tables" style="font-size: 2.5rem; color: #007bff; text-shadow: 1px 1px #e0e0e0; font-weight: bold;">Hash Tables</h1>
+        </div>
+    
+        <!-- Hash Tables Concept and Algorithm Section -->
+        <h3 id="hash-tables-concept-and-algorithm" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Hash Tables Concept and Algorithm</h3>
+        <iframe src="https://www.youtube.com/embed/FsfRsGFHuv4?si=mheS6z3uJIu1bHYu" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="width: 100%; height: 400px; margin-bottom: 20px;"></iframe>
+    
+        <!-- Need of Hashing Section -->
+        <h3 id="need-of-hashing" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Need of Hashing</h3>
+        <ul style="font-size: 1.2rem; color: #444; margin-left: 20px; margin-bottom: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 10px;">It can be used to compare large amounts of data. We create the hashes for the data, store the hashes, and later compare them.</li>
+            <li style="margin-bottom: 10px;">Hashes can be used for indexing data, especially in hash tables, to quickly locate records using the hash as a pointer.</li>
+            <li style="margin-bottom: 10px;">Used in cryptographic applications like digital signatures.</li>
+            <li style="margin-bottom: 10px;">Hashing can be used to generate seemingly random strings.</li>
+        </ul>
+    
+        <!-- Hashing Basics Section -->
+        <h3 id="hashing-basics" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Hashing Basics</h3>
+        <ul style="font-size: 1.2rem; color: #444; margin-left: 20px; margin-bottom: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 10px;">Hashing maps large data sets to a smaller table using a hashing function.</li>
+            <li style="margin-bottom: 10px;">It converts a range of key values into a range of indexes for an array.</li>
+            <li style="margin-bottom: 10px;">Hashing allows data updates and retrieval in constant time O(1).</li>
+        </ul>
+    
+        <!-- Real World Examples Section -->
+        <h3 id="real-world-examples" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Real World Examples</h3>
+        <p style="font-size: 1.2rem; color: #666;">In these examples, elements are hashed to unique numbers, similar to keys:</p>
+        <ul style="font-size: 1.2rem; color: #444; margin-left: 20px; margin-bottom: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 10px;">Universities assign unique roll numbers to students, used to retrieve their information.</li>
+            <li style="margin-bottom: 10px;">Libraries assign unique numbers to books for identifying their positions and borrowing information.</li>
+            <li style="margin-bottom: 10px;">A pin code helps identify a region, sub-region, and so on.</li>
+        </ul>
+    
+        <!-- Hashing Functions Section -->
+        <h3 id="hashing-functions" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Hashing Functions</h3>
+        <p style="font-size: 1.2rem; color: #666;">A hash function maps a data set of an arbitrary size to a fixed-size data set. The values returned are called hash values or simply hashes. These hashes are mapped to hash table arrays.</p>
+        <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; color: #444; font-size: 1rem; margin-top: 10px;">
+    hash = hashfunc(key)
+    index = hash % array_size
+    </pre>
+        <p style="font-size: 1.2rem; color: #666; margin-top: 10px;">For example, a hash function can map strings to the sum of their ASCII characters or numbers to themselves.</p>
+    </div>
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <!-- Title Section -->
+        <div class="text-center fix-spacing" style="margin-bottom: 20px;">
+            <h1 id="hash-tables" style="font-size: 2.5rem; color: #007bff; text-shadow: 1px 1px #e0e0e0; font-weight: bold;">Hash Tables</h1>
+        </div>
+    
+        <!-- Linear Probing Concept and Algorithm Section -->
+        <h3 id="linear-probing-concept-and-algorithm" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Linear Probing Concept and Algorithm</h3>
+        <iframe src="https://www.youtube.com/embed/turKQUPrAuA?si=JX_4uJsamc6dx6e_" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="width: 100%; height: 400px; margin-bottom: 20px;"></iframe>
+    
+        <!-- What is Probing Section -->
+        <h3 id="what-is-probing" style="font-size: 1.75rem; color: #333; margin-top: 20px;">What is Probing?</h3>
+        <p style="font-size: 1.2rem; color: #666;">When two keys result in the same hash value, it causes a collision in the hash table. Probing is a method of resolving such collisions. In probing, we systematically look for the next available slot for storing the key-value pair.</p>
+    
+        <!-- Types of Probing Section -->
+        <h3 id="types-of-probing" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Types of Probing</h3>
+        <p style="font-size: 1.2rem; color: #666;">There are two main types of probing:</p>
+        <ul style="font-size: 1.2rem; color: #444; margin-left: 20px; margin-bottom: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 10px;">
+                <p style="font-weight: bold; margin-bottom: 5px;">a. Linear Probing</p>
+                <p style="font-size: 1.2rem; color: #666;">In this technique, we linearly probe through the hash table to find the next free slot after a collision.</p>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <p style="font-weight: bold; margin-bottom: 5px;">b. Quadratic Probing</p>
+                <p style="font-size: 1.2rem; color: #666;">Here, the distance between probes increases quadratically (i.e., we jump to increasingly distant slots to find a free space).</p>
+            </li>
+        </ul>
+    </div>
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <!-- Title Section -->
+        <div class="text-center fix-spacing" style="margin-bottom: 20px;">
+            <h1 id="hash-tables" style="font-size: 2.5rem; color: #007bff; text-shadow: 1px 1px #e0e0e0; font-weight: bold;">Hash Tables</h1>
+        </div>
+    
+        <!-- What is Linear Probing Section -->
+        <h3 id="what-is-linear-probing" style="font-size: 1.75rem; color: #333; margin-top: 20px;">What is Linear Probing?</h3>
+        <ul style="font-size: 1.2rem; color: #666; list-style-type: disc; margin-left: 20px;">
+            <li style="margin-bottom: 10px;">
+                In Linear Probing, each cell of a hash table stores a single key–value pair. When a collision occurs due to the hash function mapping multiple keys to the same index, the algorithm searches the next available position in a linear sequence until a free cell is found.
+            </li>
+            <li style="margin-bottom: 10px;">
+                Lookup operations also follow the same logic, starting from the hashed index and checking subsequent cells until either the key is found or an empty cell is reached.
+            </li>
+        </ul>
+    
+        <!-- Linear Probing Demonstration Section -->
+        <h3 id="linear-probing-demonstration" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Linear Probing Demonstration</h3>
+        <div class="text-center">
+            <img src="Images_Files\hashtable\lp.png" alt="Linear Probing Demonstration" style="width: 100%; max-width: 700px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); margin-top: 15px;">
+        </div>
+    </div>
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <!-- Title Section -->
+        <div class="text-center fix-spacing" style="margin-bottom: 20px;">
+           
+        </div>
+    
+        <!-- Quadratic Probing Concept Section -->
+        <h3 id="quadratic-probing-concept-and-algorithm" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Quadratic Probing Concept and Algorithm</h3>
+        <div class="text-center" style="margin-bottom: 20px;">
+            <iframe src="https://www.youtube.com/embed/P2vuPs-cv4M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""
+                style="width: 100%; max-width: 700px; height: 400px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);"></iframe>
+        </div>
+    
+        <!-- What is Quadratic Probing Section -->
+        <h3 id="what-is-quadratic-probing" style="font-size: 1.75rem; color: #333; margin-top: 20px;">What is Quadratic Probing?</h3>
+        <p style="font-size: 1.2rem; color: #666; text-align: justify;">
+            Quadratic probing is an open addressing scheme which operates by taking the original hash index and adding successive values of an arbitrary quadratic polynomial until an open slot is found. This reduces clustering issues compared to linear probing, as it avoids consecutive probing positions.
+        </p>
+    
+        <!-- Quadratic Probing Demonstration Section -->
+        <h3 id="quadratic-probing-demonstration" style="font-size: 1.75rem; color: #333; margin-top: 20px;">Quadratic Probing Demonstration</h3>
+        <div class="text-center">
+            <img src="Images_Files\hashtable\qp.png" alt="Quadratic Probing Demonstration" style="width: 100%; max-width: 700px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); margin-top: 15px;">
+        </div>
+    </div>
+    
+</body>
+</html>

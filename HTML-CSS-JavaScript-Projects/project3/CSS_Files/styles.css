@@ -350,7 +350,13 @@ main {
   overflow-x: auto; /* Enable horizontal scrolling */
   padding: 10px 0;
   gap: 15px; /* Space between cards */
+  scrollbar-width: none; /* For Firefox */
 }
+
+#existing-feedback::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
 
 .feedback-card {
   background: #f9f9f9;
@@ -437,5 +443,74 @@ button:hover {
 @media (max-width: 600px) {
   #existing-feedback {
       flex-direction: row; /* Ensure cards are in a row */
+  }
+}
+
+.footer {
+  background-color: #161615;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.ftr_head {
+  font-weight: bold;
+  color: #eee6e6;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.ftr_details, .ftr_lst {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ftr_details li, .ftr_lst li {
+  margin-bottom: 10px;
+}
+
+.ftr_details li a {
+  color: #b9b6b6;
+  text-decoration: none;
+}
+
+.ftr_details li a:hover {
+  text-decoration: underline;
+}
+
+.bdr-ftr {
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+}
+
+.ftr_lst li {
+  color: #e3dfdf;
+}
+
+.ftr_lst li .ftr_fa_icn {
+  color: #007bff;
+}
+
+.ftr_lst li img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .bdr-ftr {
+      border-left: none;
+      padding-left: 0;
+  }
+  .ftr_head {
+      font-size: 16px;
+  }
+  .ftr_lst li {
+      font-size: 14px;
   }
 }

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+        <!-- Main Heading -->
+        <div class="text-center fix-spacing">
+        </div>
+    
+        <!-- Definition of Linked List Section -->
+        <h3 id="definition-of-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Definition of Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            Linked list is a linear data structure where each data is a separate object (of the same data type). Linked list objects do not occupy contiguous memory locations as compared to arrays. Elements of linked lists are linked using pointers, and the elements are called Nodes.
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            There are three types of linked lists:
+        </p>
+        <ul style="font-size: 18px; color: #2c3e50; line-height: 1.6;">
+            <li>Singly Linked List</li>
+            <li>Doubly Linked List</li>
+            <li>Circular Linked List</li>
+        </ul>
+    
+        <!-- Concept of Linked List Section -->
+        <h3 id="concept-of-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Concept of Linked List
+        </h3>
+        <div class="video-container" style="text-align: center; margin-top: 20px;">
+            <iframe src="https://www.youtube.com/embed/R9PTBwOzceo?si=lHVSWsVRLyKDgz-U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="width: 100%; max-width: 600px; height: 350px;"></iframe>
+        </div>
+    
+        <!-- Need for Linked List Section -->
+        <h3 id="need-for-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Need for Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>1. Memory Management:</strong> Arrays have fixed sizes, and unused memory or insufficient size can waste space. Linked lists efficiently manage memory by dynamically allocating space. Each node takes up only as much space as needed, and memory is freed when nodes are deleted.
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>2. Faster Processing:</strong> Deleting from arrays requires shifting elements, but in a linked list, we only need to update pointers, making operations like deletion faster, especially with a time complexity of O(1) for pointer updates.
+        </p>
+    
+        <!-- Single Linked List Section -->
+        <h3 id="single-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Single Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            Each node of a singly linked list consists of two parts:
+        </p>
+        <ul style="font-size: 18px; color: #2c3e50; line-height: 1.6;">
+            <li>The first part stores information (data).</li>
+            <li>The second part is a pointer that stores the address of the next node.</li>
+            <li><strong>Head</strong> is a pointer storing the address of the first node, and <strong>Tail</strong> stores the address of the last node.</li>
+        </ul>
+    
+        <!-- Representation of Linked List Experiment -->
+        <h3 id="representation-of-linked-list-experiment" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Representation of Linked List Experiment
+        </h3>
+        <div style="text-align: center;">
+            <img src="../../Images_Files/linkedlist/linkedlist_Representation1.png" alt="Linked List Representation" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+        </div>
+    
+        <!-- Data Type in Singly Linked List Section -->
+        <h3 id="data-type-used-in-singly-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Data Type Used in Singly Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            To implement a singly linked list, we first need a data type to store the information. Below is an example:
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Example:</strong>
+        </p>
+        <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; color: #333;">
+    struct Node{
+      char name[50];  // name of the student
+      char rollNumber[10];  // roll number of the student
+      Node *next;  // pointer to the next node
+    };
+        </pre>
+    
+        <!-- What is Linked List Section -->
+        <h3 id="what-is-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            What is Linked List?
+        </h3>
+        <div style="text-align: center;">
+            <img src="Images_Files\linkedlist\linked-list-example.jpg" alt="Linked List Example" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+        </div>
+    
+        <!-- Linked List vs Array Section -->
+        <h3 id="linked-list-vs-array" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Linked List vs Array
+        </h3>
+        <div style="text-align: center;">
+            <img src="Images_Files\linkedlist\Linkedlist vs array.png" alt="Linked List vs Array" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+        </div>
+    
+        <!-- Types of Linked List Section -->
+        <h3 id="types-of-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Types of Linked List
+        </h3>
+        <div style="text-align: center;">
+            <img src="Images_Files\linkedlist\types-of-ll.png" alt="Types of Linked List" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;"/>
+        </div>
+    
+        <!-- Operations on Linked List Section -->
+        <h3 id="operations-on-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Operations on Linked List
+        </h3>
+        <div class="video-container" style="text-align: center; margin-top: 20px;">
+            <iframe src="https://www.youtube.com/embed/wyyYQF89pJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="width: 100%; max-width: 600px; height: 350px;"></iframe>
+        </div>
+    </div>
+    
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+        <!-- Main Heading -->
+        <div class="text-center fix-spacing">
+            <h1 id="linked-list" style="color: #2c3e50; font-size: 36px; font-weight: bold; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);">
+                Linked List
+            </h1>
+        </div>
+    
+        <!-- Implementation of Singly Linked List Section -->
+        <h3 id="implementation-of-singly-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Implementation of Singly Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            Now we have the data type that our singly linked list is going to store.
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            Next, we need two pointers that mark the start and end of our singly linked list. Let us declare them:
+        </p>
+        <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; color: #333;">
+    struct Node *head = NULL;
+    struct Node *tail = NULL;
+        </pre>
+        <p style="font-size: 18px; color: #34495e;">
+            These pointers are initialized with <em>NULL</em> to indicate no data is stored in the list yet.
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            Now we are ready to insert data into our singly linked list. First, allocate memory to store the data as:
+        </p>
+        <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; color: #333;">
+    struct Node *newNode = (Node*)malloc(sizeof(struct Node));
+        </pre>
+    
+        <!-- Insertion of Elements into Singly Linked List Section -->
+        <h3 id="insertion-of-elements-into-singly-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Insertion of Elements into Singly Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            Two cases may arise when we want to insert data at the front:
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Case 1:</strong> When the list is empty (i.e., head = NULL). Here, we can simply assign:
+        </p>
+        <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; color: #333;">
+    head = tail = newNode;
+        </pre>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Case 2:</strong> When the list contains some entries (i.e., head != NULL).
+        </p>
+        <ul style="font-size: 18px; color: #2c3e50; line-height: 1.6;">
+            <li>Insertion at Front</li>
+            <li>Insertion at End</li>
+            <li>Insertion after a Node</li>
+        </ul>
+    
+        <!-- Insertion of Node in Linked List (Case 1) -->
+        <h3 id="insertion-of-node-in-linked-list-case-1" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Insertion of Node in Linked List (Case 1)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\insertion-1.png" alt="Insertion of Node Case 1" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Insertion of Node in Linked List (Case 2a) -->
+        <h3 id="insertion-of-node-in-linked-list-case-2a" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Insertion of Node in Linked List (Case 2a)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\insertion-2a.png" alt="Insertion of Node Case 2a" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Insertion of Node in Linked List (Case 2b) -->
+        <h3 id="insertion-of-node-in-linked-list-case-2b" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Insertion of Node in Linked List (Case 2b)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\insertion-2b.png" alt="Insertion of Node Case 2b" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Insertion of Node in Linked List (Case 2c) -->
+        <h3 id="insertion-of-node-in-linked-list-case-2c" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Insertion of Node in Linked List (Case 2c)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\insertion-2c.png" alt="Insertion of Node Case 2c" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Pictorial Representation of Linked List Experiment Section -->
+        <h3 id="pictorial-representation-of-linked-list-experiment" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Pictorial Representation of Linked List Experiment
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\real-life.png" alt="Pictorial Representation of Linked List Experiment" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    </div>
+
+    <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+        <!-- Main Heading -->
+        <div class="text-center fix-spacing">
+        </div>
+    
+        <!-- Check for Empty List Section -->
+        <h3 id="check" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Check
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            We can check whether the list is empty or not using something like this:
+        </p>
+        <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; color: #333;">
+    int isUnderflow(){
+      return start == NULL ? 1 : 0;
+    }
+        </pre>
+        <p style="font-size: 18px; color: #34495e;">
+            This function returns <strong>1</strong> if the list is empty, or returns <strong>0</strong> if the list is not empty.
+        </p>
+    
+        <!-- Deletion of Elements Section -->
+        <h3 id="deletion-of-elements-from-singly-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Deletion of Elements from Singly Linked List
+        </h3>
+        <p style="font-size: 18px; color: #34495e;">
+            Three cases may arise when we want to delete data from the front:
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Case 1:</strong> When the list is empty (i.e., head = NULL).<br>
+            Here, we don’t need to do anything because there is nothing to be deleted.
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Case 2:</strong> When the list contains a single entry (i.e., head != NULL and head = tail).
+        </p>
+        <p style="font-size: 18px; color: #34495e;">
+            <strong>Case 3:</strong> When the list contains two or more entries (i.e., head != tail).
+        </p>
+        <ul style="font-size: 18px; color: #2c3e50; line-height: 1.6;">
+            <li>a. Deletion at Front</li>
+            <li>b. Deletion of a Node (not at front)</li>
+        </ul>
+    
+        <!-- Deletion of Node from Linked List (Case 2) -->
+        <h3 id="deletion-of-node-from-linked-list-case-2" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Deletion of Node from Linked List (Case 2)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\deletion-2.png" alt="Deletion of Node Case 2" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Deletion of Node from Linked List (Case 3a) -->
+        <h3 id="deletion-of-node-from-linked-list-case-3a" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Deletion of Node from Linked List (Case 3a)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\deletion-2a.png" alt="Deletion of Node Case 3a" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Deletion of Node from Linked List (Case 3b) -->
+        <h3 id="deletion-of-node-from-linked-list-case-3b" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Deletion of Node from Linked List (Case 3b)
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\deletion-2b.png" alt="Deletion of Node Case 3b" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    
+        <!-- Deletion of Tail Node from Linked List Section -->
+        <h3 id="deletion-of-tail-node-from-linked-list" style="color: #2980b9; font-size: 24px; margin-top: 30px; text-decoration: underline;">
+            Deletion of Tail Node from Linked List
+        </h3>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="Images_Files\linkedlist\deletion-2c.png" alt="Deletion of Tail Node" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;" />
+        </div>
+    </div>
+    
+    
+</body>
+</html>
