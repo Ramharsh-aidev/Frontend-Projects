@@ -51,24 +51,21 @@ function loadContent(algorithm, type) {
         case 'Objective':
             url = `../HTML_Files/Aim & Objective/${algorithm}Objective.html`;
             cssFile = `../CSS_Files/${algorithm}Objective.css`;
-            jsFile = `../JavaScript_Files/${algorithm}Objective.js`;
             break;
         case 'Video':
             url = `../HTML_Files/Video/${algorithm}.html`;
             cssFile = `../CSS_Files/${algorithm}Video.css`;
-            jsFile = `../JavaScript_Files/${algorithm}Video.js`;
             break;
         case 'Animation':
             url = `../HTML_Files/Animation/${algorithm}Animation.html`;
             cssFile = `../CSS_Files/${algorithm}Animation.css`;
-            jsFile = `../JavaScript_Files/${algorithm}Animation.js`;
+            jsFile = `../JavaScript_Files/${algorithm}.js`;
             break;
         case 'Theory':
             url = `../HTML_Files/Theory/${algorithm}Theory.html`;
             break;
         case 'Test':
             url = `../HTML_Files/Test_Files/${algorithm}Test.html`;
-            // cssFile = `../CSS_Files/${algorithm}Test.css`; // Uncomment if needed
             jsFile = `../JavaScript_Files/${algorithm}Test.js`;
             break;
     }
@@ -90,27 +87,36 @@ function loadContent(algorithm, type) {
                 loadCSS(cssFile);
             }
 
-            // Load JS for Animation and Test
-            if (type === 'Animation' || type === 'Test') {
-                loadJS(jsFile);
-            } else if (jsFile) {
-                // Load JS for other types if applicable
-                loadJS(jsFile);
+            // Load the corresponding JS if applicable
+            if (jsFile) {
+                refreshJS(jsFile);
             }
         })
         .catch(error => console.error('Error loading content:', error));
 }
 
-function loadJS(file) {
-    if (file) {
-        const script = document.createElement('script');
-        script.src = file;
-        script.onload = () => {
-            console.log(`${file} loaded successfully.`);
-        };
-        script.onerror = () => {
-            console.error(`Error loading script: ${file}`);
-        };
-        document.body.appendChild(script);
+function loadCSS(file) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = file;
+    document.head.appendChild(link);
+}
+
+function refreshJS(file) {
+    // Remove existing script with the same src to avoid duplicates
+    const existingScript = document.querySelector(`script[src="${file}"]`);
+    if (existingScript) {
+        existingScript.remove();
     }
+    
+    // Create a new script element
+    const script = document.createElement('script');
+    script.src = file + '?v=' + new Date().getTime(); // Append a timestamp to force reload
+    script.onload = () => {
+        console.log(`${file} loaded successfully.`);
+    };
+    script.onerror = () => {
+        console.error(`Error loading script: ${file}`);
+    };
+    document.body.appendChild(script);
 }
