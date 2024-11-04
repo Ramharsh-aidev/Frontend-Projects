@@ -14,26 +14,28 @@ const feedbackResponse = document.getElementById('feedback-response');
 const addFeedbackBtn = document.getElementById('add-feedback-btn');
 const clearFeedbackBtn = document.getElementById('clear-feedback-btn');
 
-// Default feedback entries
-const defaultFeedbacks = [
-    { name: "John Doe", email: "john@example.com", message: "Great animations! They really bring the concepts to life." },
-    { name: "Jane Smith", email: "jane@example.com", message: "I love the practice problems! They reinforce what I've learned." },
-    { name: "Sam Wilson", email: "sam@example.com", message: "The explanations are clear and concise, which makes it easy to follow along." },
-    { name: "Emma Brown", email: "emma@example.com", message: "This site has transformed my learning experience." }
+// New default feedback entries
+const newDefaultFeedbacks = [
+    { name: "Prathamesh Chikkali", message: "Great animations! They really bring the concepts to life and help me understand complex topics in a fun and engaging way. I always look forward to watching the videos!" },
+    { name: "Ramharsh Dandekar", message: "The explanations are clear and concise, which makes it easy to follow along. I especially appreciate the visual aids that accompany the lessons—they make everything much easier to grasp." },
+    { name: "Shantanu Anantawar", message: "This site has transformed my learning experience. The interactive elements keep me engaged, and I can learn at my own pace. I highly recommend it to anyone looking to improve their skills!" },
+    { name: "Pranil Bankar", message: "I love the practice problems! They are thoughtfully designed to reinforce what I've learned in the lessons. Completing them gives me a real sense of accomplishment." },
+    { name: "Shubham Fulwani", message: "I love the practice problems! They are thoughtfully designed to reinforce what I've learned in the lessons. Completing them gives me a real sense of accomplishment." }
 ];
 
-// Load existing feedback from localStorage
+// Load existing feedback from localStorage or use new defaults
 function loadFeedback() {
     const userFeedbacks = JSON.parse(localStorage.getItem('userFeedbacks')) || [];
     existingFeedback.innerHTML = ''; // Clear existing feedback
 
-    defaultFeedbacks.forEach(({ name, email, message }) => {
-        addFeedbackCard(name, email, message);
+    // Display default feedbacks
+    newDefaultFeedbacks.forEach(({ name, message }) => {
+        addFeedbackCard(name, "default@example.com", message); // Use a placeholder for email
     });
 
-
+    // Display user feedbacks
     userFeedbacks.forEach(({ name, email, message }, index) => {
-        addFeedbackCard(name, email, message, index + defaultFeedbacks.length); // Adjust index for user feedback
+        addFeedbackCard(name, email, message, index + newDefaultFeedbacks.length); // Adjust index for user feedback
     });
 }
 
@@ -44,17 +46,17 @@ function addFeedbackCard(name, email, message, index) {
     newFeedback.innerHTML = `
         <strong>${name}</strong>
         <p>${message}</p>
-        ${index >= defaultFeedbacks.length ? '<i class="fas fa-trash delete-icon" data-index="' + (index - defaultFeedbacks.length) + '" title="Delete Feedback"></i>' : ''}
+        ${index >= newDefaultFeedbacks.length ? '<i class="fas fa-trash delete-icon" data-index="' + (index - newDefaultFeedbacks.length) + '" title="Delete Feedback"></i>' : ''}
     `;
     existingFeedback.appendChild(newFeedback);
 
     // Add event listener for the delete icon, only if it's user feedback
-    if (index >= defaultFeedbacks.length) {
+    if (index >= newDefaultFeedbacks.length) {
         const deleteIcon = newFeedback.querySelector('.delete-icon');
         deleteIcon.addEventListener('click', function() {
             const emailInput = prompt("Please enter your email to confirm deletion:");
             if (emailInput && emailInput.trim().toLowerCase() === email.toLowerCase()) {
-                deleteFeedback(index - defaultFeedbacks.length);
+                deleteFeedback(index - newDefaultFeedbacks.length);
             } else {
                 feedbackResponse.innerText = 'Email does not match. Feedback not deleted.';
             }
@@ -98,7 +100,7 @@ feedbackForm.addEventListener('submit', function(event) {
         if (userFeedbacks.length < 6) {
             userFeedbacks.push({ name, email, message });
         } else {
-            userFeedbacks.shift();
+            userFeedbacks.shift(); // Remove the oldest feedback
             userFeedbacks.push({ name, email, message });
         }
 
@@ -122,8 +124,8 @@ clearFeedbackBtn.addEventListener('click', function() {
     const confirmation = confirm("Are you sure you want to clear all feedback?");
     if (confirmation) {
         localStorage.clear(); // Clear all items from local storage
-        loadFeedback();
-        feedbackResponse.innerText = 'All feedback has been cleared.';
+        loadFeedback(); // Load new default feedbacks
+        feedbackResponse.innerText = 'All feedback has been cleared and reset to defaults.';
     }
 });
 

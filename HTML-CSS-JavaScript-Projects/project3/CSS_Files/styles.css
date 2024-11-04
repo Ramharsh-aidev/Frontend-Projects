@@ -19,26 +19,19 @@ body {
 .navbar .nav-link.active {
     color: #fff;
     border-radius: 90% 10% 88% 12% / 24% 77% 23% 76%;
-    /* White text for the active link */
     font-weight: bold;
     font-size: 18px;
-    /* Increased font size for the active link */
 }
 
 .navbar .nav-link:hover {
     color: #fff;
-    /* White text on hover */
     background-color: #555;
-    /* Darker grey background on hover */
 }
 
-/* Add margin to nav items for spacing */
 .navbar-nav .nav-item {
     margin-right: 20px;
-    /* Adjust spacing as needed */
 }
 
-/* Remove margin from the last item */
 .navbar-nav .nav-item:last-child {
     margin-right: 0;
 }
@@ -54,9 +47,7 @@ body {
 
 .dropdown-menu .dropdown-item:hover {
     background-color: #555;
-    /* Darker grey on hover */
     color: #fff;
-    /* White text on hover */
 }
 
 .search-container {
@@ -68,10 +59,8 @@ body {
     padding: 6px;
     margin-right: 10px;
     border: 2px solid transparent;
-    /* Transparent border by default */
     border-radius: 4px;
     transition: border-color 0.3s ease;
-    /* Smooth transition for border color */
 }
 
 .search-container input[type="search"]:focus {
@@ -123,7 +112,6 @@ body {
 }
 
 /* style the main page banner */
-/* To align the content and the image side by side */
 .home {
     padding-top: 13rem ;
     display: grid;
@@ -132,7 +120,6 @@ body {
     gap: 2 rem;
   }
 
-  /* padding left and right to 5% for all the sections we are going to create. */
   section {
     padding: 9rem 10%;
   }
@@ -142,7 +129,6 @@ body {
     width: 100%;
   }
 
-/* style the h1 and p elements by modifying their font sizes, */
   .home .content h1 {
     font-size: 5.3rem;
     font-weight: 400;
