@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramharsh Dandekar's Projects Portfolio</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            padding: 0;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Main heading */
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Subheading */
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #34495e;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.5s;
+        }
+
+        /* Description */
+        .description {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            animation: fadeInUp 1s ease-out 1s;
+        }
+
+        /* Project List */
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Each Project Card */
+        .project-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Hover Effect */
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Project Title */
+        .project-item h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Project Description */
+        .project-item p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        /* Project Link */
+        .project-item a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Link Hover */
+        .project-item a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            animation: fadeInUp 1s ease-out 2s;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Main Heading -->
+        <h1>Welcome to My Projects Portfolio</h1>
+        
+        <!-- Subheading -->
+        <h2>Explore My Web Development and AI Projects</h2>
+
+        <!-- Short Description -->
+        <div class="description">
+            <p>I'm Ramharsh Dandekar, a Full Stack Java Developer with a passion for creating innovative solutions using Java, React.js, and MySQL. Below are some of the projects I've built to showcase my skills in web development and AI. Feel free to explore them!</p>
+        </div>
+
+        <!-- Project List -->
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Math Solver with Image Recognition</h3>
+                <p>A web app that solves mathematical problems from images using AI and machine learning.</p>
+                <a href="" target="_blank">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>HTML, CSS, JavaScript Compiler</h3>
+                <p>A tool to compile and preview HTML, CSS, and JavaScript code in real-time.</p>
+                <a href="https://ramharsh-aidev.github.io/Frontend-Projects/React-Projects/code_editor/" target="_blank">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>DSA Learning Website</h3>
+                <p>An interactive website to learn Data Structures and Algorithms with tutorials and practice problems.</p>
+                <a href="https://ramharsh-aidev.github.io/Frontend-Projects/HTML-CSS-JavaScript-Projects/project3/" target="_blank">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>Music Menai</h3>
+                <p>A music player web app where you can listen to your favorite songs online.</p>
+                <a href="https://ramharsh-aidev.github.io/Frontend-Projects/HTML-CSS-JavaScript-Projects/project1/" target="_blank">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>Snake Game</h3>
+                <p>A classic Snake game built using Java that you can play right in your browser.</p>
+                <a href="https://ramharsh-aidev.github.io/Frontend-Projects/HTML-CSS-JavaScript-Projects/project2/" target="_blank">View Project</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Created by <strong>Ramharsh Dandekar</strong> | <a href="https://github.com/Ramharsh-aidev" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/ramharsh-sanjay-dandekar/">LinkedIn</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
