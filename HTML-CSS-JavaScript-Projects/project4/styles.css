@@ -1,73 +1,75 @@
-/* Default Dark Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
-    background-color: #000; /* Default to dark theme */
-    color: #fff; /* Default text color */
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.card {
+    border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-body.light-mode {
-    background-color: #fff; /* Light theme background */
-    color: #000; /* Light theme text color */
-}
-
-/* Card Styling */
-.card {
-    background-color: #343a40;
-    border-radius: 20px;
-}
-
-.card.light-mode {
-    background-color: #f8f9fa; /* Light theme card background */
-}
-
-.card-body {
-    color: #fff;
-}
-
-.card-body.light-mode {
-    color: #000; /* Light theme card body text color */
-}
-
-/* Modal Styling */
 .modal-content {
-    background-color: #343a40;
-    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.modal-content.light-mode {
-    background-color: #fff; /* Light theme modal background */
-    color: #000; /* Light theme modal text color */
-}
-
-/* Button Styling */
 button {
-    background-color: #ffc107; /* Default button color */
-    color: #000;
     border: none;
     border-radius: 30px;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #e0a800; /* Darken button color on hover */
+#submitBtn {
+    background-color: #f8e47d;
+    color: #ff6c04;
+    font-size: medium;
+    font-weight: bolder;
 }
 
-button.light-mode {
-    background-color: #ffdd57; /* Light theme button color */
-    color: #000; /* Button text color for light theme */
+#submitBtn:hover {
+    background-color: #f6d815;
+    color: #fff;
 }
 
-/* Image Upload Styling */
+body.dark-mode #submitBtn {
+    background-color: #f6d815;
+    color: #ff6c04;
+}
+
+body.dark-mode #submitBtn:hover {
+    background-color: #f8e47d;
+    color: #fff;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
 .upload-image {
     max-width: 100%;
     text-align: center;
-    margin: 0 auto; /* Center the element */
+    margin: 0 auto;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .upload-image {
+    background-color: #3b3b3b;
 }
 
 .inner-upload-image {
-    background-color: transparent; /* Make background transparent */
-    border: 2px dashed #ffc107; /* Add dashed border */
-    height: 200px; /* Set fixed height */
+    background-color: #f8e47d;
+    border: 2px dashed #ffd700;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,36 +79,70 @@ button.light-mode {
 }
 
 .inner-upload-image:hover {
-    background-color: #333; /* Add background color on hover */
-    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5); /* Add yellow shadow */
+    background-color: #fff29a;
+    border: 2px dashed #fce264;
+    box-shadow: 0px 0px 10px 3px #ff6c04;
 }
 
-#image {
-    max-height: 100%;
-    max-width: 100%;
+body.dark-mode .inner-upload-image {
+    background-color: #4a4949;
+    border: 2px dashed #fce264;
 }
 
-#uploadIcon, #uploadText {
-    color: #ffc107; /* Change icon and text color to yellow */
+body.dark-mode .inner-upload-image:hover {
+    background-color: #333333;
+    border: 2px dashed #f8e47d;
+    box-shadow: 0px 0px 10px 3px #ff6c04;
 }
 
-/* Output Section Styling */
-.output {
-    width: 100%;
-    display: none;
+body.dark-mode .inner-upload-image i,
+body.dark-mode .inner-upload-image span {
+    color: #f8e47d;
 }
 
-#text {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    color: #fff; /* Default text color for output */
+.outter-upload-image{
+    background-color: #00f2ff;
 }
 
-#text.light-mode {
-    color: #000; /* Light theme output text color */
-}
-
-/* Loading Section Styling */
 #loadingSection {
     display: none;
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 20px;
+    }
+    .output {
+        width: 100%;
+    }
+}
+
+#themeLabel {
+    display: flex;
+    align-items: center;
+}
+
+#themeLabel span {
+    display: none;
+}
+
+body, .card, .modal-content, button, #themeToggle {
+    transition: all 0.3s ease;
+}
+
+h2.text-gradient {
+    animation: gradient-animation 4s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background: linear-gradient(45deg,  #00f2ff, #8c00ff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    100% {
+        background: linear-gradient(45deg, #8c00ff, #00f2ff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 }

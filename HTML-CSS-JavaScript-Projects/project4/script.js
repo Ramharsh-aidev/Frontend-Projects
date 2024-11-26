@@ -1,4 +1,3 @@
-// JavaScript Code
 let innerUploadImage = document.querySelector(".inner-upload-image");
 let input = innerUploadImage.querySelector("input");
 let image = document.querySelector("#image");
@@ -18,6 +17,21 @@ let fileDetails = {
     data: null
 };
 
+// Function to toggle theme
+function toggleTheme() {
+    if (themeToggle.checked) {
+        document.body.classList.add("dark-mode");
+        themeLabel.innerHTML = '<i class="fas fa-sun"></i> Light Mode';  // Change the label to Light Mode icon
+    } else {
+        document.body.classList.remove("dark-mode");
+        themeLabel.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';  // Change the label to Dark Mode icon
+    }
+}
+
+// Listen for toggle change event to switch themes
+themeToggle.addEventListener('change', toggleTheme);
+
+// Function to generate response from the API
 async function generateResponse() {
     const RequestOption = {
         method: "POST",
@@ -98,39 +112,5 @@ confirmUploadBtn.addEventListener("click", () => {
     input.click();
 });
 
-// Modify the theme toggle event to change the upload button styles
-themeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('light-mode');
-    document.querySelectorAll('.card').forEach(card => {
-        card.classList.toggle('light-mode');
-    });
-    document.querySelectorAll('.card-body').forEach(body => {
-        body.classList.toggle('light-mode');
-    });
-    document.querySelectorAll('#text').forEach(output => {
-        output.classList.toggle('light-mode');
-    });
-    document.querySelectorAll('.modal-content').forEach(modal => {
-        modal.classList.toggle('light-mode');
-    });
-    document.querySelectorAll('button').forEach(button => {
-        button.classList.toggle('light-mode');
-    });
-
-    // Change upload button color
-    const uploadImage = document.querySelector(".inner-upload-image");
-    if (document.body.classList.contains('light-mode')) {
-        uploadImage.classList.remove('dark-mode');
-        uploadImage.classList.add('light-mode');
-    } else {
-        uploadImage.classList.remove('light-mode');
-        uploadImage.classList.add('dark-mode');
-    }
-
-    // Update the label icon and text (Only the icon will remain)
-    if (document.body.classList.contains('light-mode')) {
-        themeLabel.innerHTML = '<i class="fas fa-sun"></i>';  // Light mode icon
-    } else {
-        themeLabel.innerHTML = '<i class="fas fa-moon"></i>';  // Dark mode icon
-    }
-});
+// Initialize the theme based on the current toggle state
+toggleTheme();
