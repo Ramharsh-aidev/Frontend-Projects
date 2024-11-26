@@ -1,94 +1,89 @@
-/* styles.css */
-body {
-    background-color: #121212;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
+/* General Reset and Font Styling */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.upload-container {
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+/* Body styling */
+body {
+    background-color: #000; /* Change background to black */
+    color: #fff; /* Change text color to white */
 }
 
-.custom-file-upload {
-    cursor: pointer;
-    display: inline-block;
+/* Header Styling */
+h1 {
+    background: linear-gradient(to right, #ffc107, #ffdd57);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
-    padding: 30px;
-    border-radius: 10px;
-    background-color: #333;
-    border: 2px dashed #888;
-    width: 100%;
-    transition: background-color 0.3s ease;
+    font-size: 3rem;
+    margin-bottom: 40px;
 }
 
-.custom-file-upload:hover {
-    background-color: #444;
-}
-
-.file-input {
-    display: none; /* Hide the default file input */
-}
-
-#uploaded-image-container {
+/* Image Upload Styling */
+.upload-image {
     max-width: 100%;
-    display: block;
-    margin-top: 20px;
+    text-align: center;
+    margin: 0 auto; /* Center the element */
 }
 
-#uploaded-image {
+.inner-upload-image {
+    background-color: transparent; /* Make background transparent */
+    border: 2px dashed #ffc107; /* Add dashed border */
+    height: 200px; /* Set fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.inner-upload-image:hover {
+    background-color: #333; /* Add background color on hover */
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5); /* Add yellow shadow */
+}
+
+#image {
+    max-height: 100%;
     max-width: 100%;
-    border-radius: 8px;
 }
 
-.submit-btn {
-    background-color: #ffa500;
+#uploadIcon, #uploadText {
+    color: #ffc107; /* Change icon and text color to yellow */
+}
+
+/* Button Styling */
+button {
+    background-color: #ffc107; /* Change button color to yellow */
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #000; /* Change button text color to black */
     border: none;
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: #ff8c00;
-}
-
-.solution-container {
-    background-color: #1f1f1f;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.steps {
+    border-radius: 30px;
+    transition: background-color 0.3s;
     margin-top: 20px;
-    text-align: left;
 }
 
-.steps h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    font-weight: 500;
+button:hover {
+    background-color: #e0a800; /* Darken button color on hover */
 }
 
-.steps p {
-    font-size: 16px;
-    color: #bbb;
-    margin-bottom: 10px;
+/* Output Section Styling */
+.output {
+    width: 100%;
+    display: none;
 }
 
-@media (max-width: 768px) {
-    .upload-container {
-        padding: 20px;
-    }
+#text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #fff; /* Change text color to white */
+}
 
-    .submit-btn {
-        font-size: 16px;
-    }
+/* Loading Section Styling */
+#loadingSection {
+    display: none;
 }

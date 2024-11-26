@@ -1,97 +1,96 @@
-// script.js
+let innerUploadImage = document.querySelector(".inner-upload-image");
+let input = innerUploadImage.querySelector("input");
+let image = document.querySelector("#image");
+let loadingSection = document.querySelector("#loadingSection");
+let btn = document.querySelector("#submitBtn");
+let text = document.querySelector("#text");
+let outputSection = document.querySelector("#outputSection");
+let uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
+let confirmUploadBtn = document.getElementById('confirmUpload');
 
-let imageUploaded = false; // Track if an image has been uploaded
+const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAYlfxQdPbnnxST7L57qEzRyGUo-AyFhws";
 
-document.getElementById('file-input').addEventListener('change', function() {
-    const fileInput = document.getElementById('file-input');
-    const file = fileInput.files[0];
-    
-    if (file) {
-        if (imageUploaded) {
-            // Show confirmation modal if an image has already been uploaded
-            const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-            confirmModal.show();
-        } else {
-            uploadImage(file);
-        }
+let fileDetails = {
+    mime_type: null,
+    data: null
+}
+
+async function generateResponse() {
+    const RequestOption = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            "contents": [{
+                "parts": [
+                    { "text": "solve the mathematical problem with proper steps of solution" },
+                    {
+                        "inline_data": {
+                            "mime_type": fileDetails.mime_type,
+                            "data": fileDetails.data
+                        }
+                    }
+                ]
+            }]
+        })
     }
-});
 
-document.getElementById('submit-btn').addEventListener('click', function() {
-    const fileInput = document.getElementById('file-input');
-    const file = fileInput.files[0];
-    
-    if (!file) {
-        alert("Please upload an image first!");
-        return;
-    }
+    try {
+        let response = await fetch(Api_url, RequestOption);
+        let data = await response.json();
+        let apiResponse = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
-    // Show loading message until solution is fetched
-    document.getElementById('solution-container').classList.remove('d-none');
-    const stepsContainer = document.getElementById('steps');
-    stepsContainer.innerHTML = "<p>Loading solution...</p>";
-    
-    // Simulate API call to process the image and get a solution
-    setTimeout(() => {
-        const solutionSteps = [
-            "Step 1: Identify the given equation.",
-            "Step 2: Simplify both sides.",
-            "Step 3: Solve for the unknown variable.",
-            "Step 4: Verify the solution."
-        ];
+        text.innerHTML = apiResponse;
+        outputSection.style.display = "block";
 
-        stepsContainer.innerHTML = "";
-        solutionSteps.forEach(step => {
-            const stepElement = document.createElement('p');
-            stepElement.textContent = step;
-            stepsContainer.appendChild(stepElement);
+        // Render math formulas
+        renderMathInElement(text, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\(", right: "\\)", display: false }
+            ]
         });
-    }, 2000);
-});
 
-// Handle confirmation for uploading a new image
-document.getElementById('confirm-upload').addEventListener('click', function() {
-    // Reset the upload state and allow uploading a new image
-    resetUploadState();
-
-    // Hide the modal
-    const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
-    confirmModal.hide();
-});
-
-// Function to handle image upload
-function uploadImage(file) {
-    // Hide upload icon and show uploaded image container
-    document.querySelector('.custom-file-upload').style.display = 'none';
-    document.getElementById('uploaded-image-container').classList.remove('d-none');
-    
-    // Display uploaded image in the div
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        document.getElementById('uploaded-image').src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-    
-    // Set imageUploaded to true
-    imageUploaded = true;
-}
-
-// Reset the upload state to default
-function resetUploadState() {
-    const fileInput = document.getElementById('file-input');
-    fileInput.value = ''; // Clear the file input
-    document.querySelector('.custom-file-upload').style.display = 'block'; // Show upload icon
-    document.getElementById('uploaded-image-container').classList.add('d-none'); // Hide uploaded image container
-    document.getElementById('uploaded-image').src = ''; // Clear the image source
-    document.getElementById('solution-container').classList.add('d-none'); // Hide solution container
-    document.getElementById('steps').innerHTML = ''; // Clear previous solution steps
-    imageUploaded = false; // Reset the upload state
-}
-
-// Reset the upload state when the user clicks on the uploaded image
-document.getElementById('uploaded-image-container').addEventListener('click', function() {
-    if (imageUploaded) {
-        const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-        confirmModal.show();
+    } catch (e) {
+        console.log(e);
+    } finally {
+        loadingSection.style.display = "none";
     }
+}
+
+input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+    reader.onload = (e) => {
+        let base64data = e.target.result.split(",")[1];
+        fileDetails.mime_type = file.type;
+        fileDetails.data = base64data;
+
+        innerUploadImage.querySelector("span").style.display = "none";
+        innerUploadImage.querySelector("#uploadIcon").style.display = "none";
+        image.style.display = "block";
+        image.src = `data:${fileDetails.mime_type};base64,${fileDetails.data}`;
+        outputSection.style.display = "none";
+    };
+
+    reader.readAsDataURL(file);
+});
+
+btn.addEventListener("click", () => {
+    loadingSection.style.display = "block";
+    generateResponse();
+});
+
+innerUploadImage.addEventListener("click", () => {
+    if (image.style.display !== "none") {
+        uploadModal.show();
+    } else {
+        input.click();
+    }
+});
+
+confirmUploadBtn.addEventListener("click", () => {
+    uploadModal.hide();
+    input.click();
 });
