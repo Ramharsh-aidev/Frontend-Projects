@@ -1,25 +1,60 @@
-/* General Reset and Font Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Body styling */
+/* Default Dark Theme */
 body {
-    background-color: #000; /* Change background to black */
-    color: #fff; /* Change text color to white */
+    background-color: #000; /* Default to dark theme */
+    color: #fff; /* Default text color */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header Styling */
-h1 {
-    background: linear-gradient(to right, #ffc107, #ffdd57);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 40px;
+body.light-mode {
+    background-color: #fff; /* Light theme background */
+    color: #000; /* Light theme text color */
+}
+
+/* Card Styling */
+.card {
+    background-color: #343a40;
+    border-radius: 20px;
+}
+
+.card.light-mode {
+    background-color: #f8f9fa; /* Light theme card background */
+}
+
+.card-body {
+    color: #fff;
+}
+
+.card-body.light-mode {
+    color: #000; /* Light theme card body text color */
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.modal-content.light-mode {
+    background-color: #fff; /* Light theme modal background */
+    color: #000; /* Light theme modal text color */
+}
+
+/* Button Styling */
+button {
+    background-color: #ffc107; /* Default button color */
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0a800; /* Darken button color on hover */
+}
+
+button.light-mode {
+    background-color: #ffdd57; /* Light theme button color */
+    color: #000; /* Button text color for light theme */
 }
 
 /* Image Upload Styling */
@@ -55,22 +90,6 @@ h1 {
     color: #ffc107; /* Change icon and text color to yellow */
 }
 
-/* Button Styling */
-button {
-    background-color: #ffc107; /* Change button color to yellow */
-    padding: 15px 20px;
-    font-size: 18px;
-    color: #000; /* Change button text color to black */
-    border: none;
-    border-radius: 30px;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: #e0a800; /* Darken button color on hover */
-}
-
 /* Output Section Styling */
 .output {
     width: 100%;
@@ -80,7 +99,11 @@ button:hover {
 #text {
     white-space: pre-wrap;
     word-wrap: break-word;
-    color: #fff; /* Change text color to white */
+    color: #fff; /* Default text color for output */
+}
+
+#text.light-mode {
+    color: #000; /* Light theme output text color */
 }
 
 /* Loading Section Styling */

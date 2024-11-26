@@ -1,3 +1,4 @@
+// JavaScript Code
 let innerUploadImage = document.querySelector(".inner-upload-image");
 let input = innerUploadImage.querySelector("input");
 let image = document.querySelector("#image");
@@ -7,13 +8,15 @@ let text = document.querySelector("#text");
 let outputSection = document.querySelector("#outputSection");
 let uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
 let confirmUploadBtn = document.getElementById('confirmUpload');
+let themeToggle = document.getElementById('themeToggle');
+let themeLabel = document.getElementById('themeLabel');
 
 const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAYlfxQdPbnnxST7L57qEzRyGUo-AyFhws";
 
 let fileDetails = {
     mime_type: null,
     data: null
-}
+};
 
 async function generateResponse() {
     const RequestOption = {
@@ -32,7 +35,7 @@ async function generateResponse() {
                 ]
             }]
         })
-    }
+    };
 
     try {
         let response = await fetch(Api_url, RequestOption);
@@ -93,4 +96,41 @@ innerUploadImage.addEventListener("click", () => {
 confirmUploadBtn.addEventListener("click", () => {
     uploadModal.hide();
     input.click();
+});
+
+// Modify the theme toggle event to change the upload button styles
+themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.toggle('light-mode');
+    });
+    document.querySelectorAll('.card-body').forEach(body => {
+        body.classList.toggle('light-mode');
+    });
+    document.querySelectorAll('#text').forEach(output => {
+        output.classList.toggle('light-mode');
+    });
+    document.querySelectorAll('.modal-content').forEach(modal => {
+        modal.classList.toggle('light-mode');
+    });
+    document.querySelectorAll('button').forEach(button => {
+        button.classList.toggle('light-mode');
+    });
+
+    // Change upload button color
+    const uploadImage = document.querySelector(".inner-upload-image");
+    if (document.body.classList.contains('light-mode')) {
+        uploadImage.classList.remove('dark-mode');
+        uploadImage.classList.add('light-mode');
+    } else {
+        uploadImage.classList.remove('light-mode');
+        uploadImage.classList.add('dark-mode');
+    }
+
+    // Update the label icon and text (Only the icon will remain)
+    if (document.body.classList.contains('light-mode')) {
+        themeLabel.innerHTML = '<i class="fas fa-sun"></i>';  // Light mode icon
+    } else {
+        themeLabel.innerHTML = '<i class="fas fa-moon"></i>';  // Dark mode icon
+    }
 });
