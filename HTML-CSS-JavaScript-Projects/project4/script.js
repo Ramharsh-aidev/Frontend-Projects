@@ -1,4 +1,4 @@
-import { GOOGLE_GEMINI_API } from './api.env';
+import { GOOGLE_GEMINI_API } from './api.env.js';
 
 let innerUploadImage = document.querySelector(".inner-upload-image");
 let input = innerUploadImage.querySelector("input");
