@@ -9,6 +9,7 @@ let uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
 let confirmUploadBtn = document.getElementById('confirmUpload');
 let themeToggle = document.getElementById('themeToggle');
 let themeLabel = document.getElementById('themeLabel');
+let noImageModal = new bootstrap.Modal(document.getElementById('noImageModal')); // Modal for no image alert
 
 const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAYlfxQdPbnnxST7L57qEzRyGUo-AyFhws";
 
@@ -57,7 +58,7 @@ async function generateResponse() {
         let apiResponse = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
         text.innerHTML = apiResponse;
-        outputSection.style.display = "block";
+        outputSection.style.display = "block";  // Show the output box
 
         // Render math formulas
         renderMathInElement(text, {
@@ -95,6 +96,12 @@ input.addEventListener("change", () => {
 });
 
 btn.addEventListener("click", () => {
+    // Check if an image is uploaded
+    if (!fileDetails.data) {
+        noImageModal.show(); // Show prompt if no image is uploaded
+        return;
+    }
+
     loadingSection.style.display = "block";
     generateResponse();
 });

@@ -81,7 +81,7 @@ body.dark-mode .upload-image {
 .inner-upload-image:hover {
     background-color: #fff29a;
     border: 2px dashed #fce264;
-    box-shadow: 0px 0px 10px 3px #ff6c04;
+    box-shadow: 0px 0px 10px 3px #fd8b3a;
 }
 
 body.dark-mode .inner-upload-image {
@@ -92,7 +92,7 @@ body.dark-mode .inner-upload-image {
 body.dark-mode .inner-upload-image:hover {
     background-color: #333333;
     border: 2px dashed #f8e47d;
-    box-shadow: 0px 0px 10px 3px #ff6c04;
+    box-shadow: 0px 0px 10px 3px #fd8b3a;
 }
 
 body.dark-mode .inner-upload-image i,
@@ -100,9 +100,6 @@ body.dark-mode .inner-upload-image span {
     color: #f8e47d;
 }
 
-.outter-upload-image{
-    background-color: #00f2ff;
-}
 
 #loadingSection {
     display: none;
@@ -130,18 +127,52 @@ body, .card, .modal-content, button, #themeToggle {
     transition: all 0.3s ease;
 }
 
+/* Light Theme - Default Card Body Styling */
+.card-body {
+    background-color: #ffffff;  
+    border-radius: 20px;    
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .card-body {
+    background-color: #333333;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Consistent font color for modal in both themes */
+.modal-body, .modal-header, .modal-title {
+    color: inherit;
+}
+
+body.dark-mode .modal-content {
+    background-color: #4a4949;
+    color: #ffffff;
+}
+
+body .modal-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
 h2.text-gradient {
     animation: gradient-animation 4s ease infinite;
 }
 
 @keyframes gradient-animation {
     0% {
-        background: linear-gradient(45deg,  #00f2ff, #8c00ff);
+        background: linear-gradient(45deg,  #f6ff99, #ffa600);
         -webkit-background-clip: text;
         color: transparent;
     }
     100% {
-        background: linear-gradient(45deg, #8c00ff, #00f2ff);
+        background: linear-gradient(45deg, #ffa600, #f6ff99);
         -webkit-background-clip: text;
         color: transparent;
     }
