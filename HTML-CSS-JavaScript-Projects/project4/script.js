@@ -1,3 +1,5 @@
+import { GOOGLE_GEMINI_API } from './api.env';
+
 let innerUploadImage = document.querySelector(".inner-upload-image");
 let input = innerUploadImage.querySelector("input");
 let image = document.querySelector("#image");
@@ -9,9 +11,9 @@ let uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
 let confirmUploadBtn = document.getElementById('confirmUpload');
 let themeToggle = document.getElementById('themeToggle');
 let themeLabel = document.getElementById('themeLabel');
-let noImageModal = new bootstrap.Modal(document.getElementById('noImageModal')); // Modal for no image alert
+let noImageModal = new bootstrap.Modal(document.getElementById('noImageModal'));
 
-const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAYlfxQdPbnnxST7L57qEzRyGUo-AyFhws";
+const Api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GOOGLE_GEMINI_API}`;
 
 let fileDetails = {
     mime_type: null,
