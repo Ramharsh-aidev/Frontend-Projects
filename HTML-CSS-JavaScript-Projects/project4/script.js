@@ -22,10 +22,10 @@ let fileDetails = {
 function toggleTheme() {
     if (themeToggle.checked) {
         document.body.classList.add("dark-mode");
-        themeLabel.innerHTML = '<i class="fas fa-sun"></i> Light Mode';  // Change the label to Light Mode icon
+        themeLabel.innerHTML = '<i class="fas fa-moon"></i>';  // Change the label to Light Mode icon
     } else {
         document.body.classList.remove("dark-mode");
-        themeLabel.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';  // Change the label to Dark Mode icon
+        themeLabel.innerHTML = '<i class="fas fa-sun"></i>';  // Change the label to Dark Mode icon
     }
 }
 

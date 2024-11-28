@@ -1,3 +1,4 @@
+/* General Resets */
 * {
     margin: 0;
     padding: 0;
@@ -100,7 +101,6 @@ body.dark-mode .inner-upload-image span {
     color: #f8e47d;
 }
 
-
 #loadingSection {
     display: none;
 }
@@ -129,9 +129,9 @@ body, .card, .modal-content, button, #themeToggle {
 
 /* Light Theme - Default Card Body Styling */
 .card-body {
-    background-color: #ffffff;  
-    border-radius: 20px;    
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     color: #000000;
     transition: all 0.3s ease;
 }
@@ -160,14 +160,13 @@ body .modal-content {
     color: #000000;
 }
 
-
 h2.text-gradient {
     animation: gradient-animation 4s ease infinite;
 }
 
 @keyframes gradient-animation {
     0% {
-        background: linear-gradient(45deg,  #f6ff99, #ffa600);
+        background: linear-gradient(45deg, #f6ff99, #ffa600);
         -webkit-background-clip: text;
         color: transparent;
     }
@@ -176,4 +175,54 @@ h2.text-gradient {
         -webkit-background-clip: text;
         color: transparent;
     }
+}
+
+/* Output Box Styling */
+.output {
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.output pre {
+    font-size: 18px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* Add scrolling if content overflows */
+.output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.output::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Additional styling for KaTeX */
+.katex {
+    display: block;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* For Dark Mode */
+body.dark-mode .output {
+    background-color: #2a2a2a;
+    color: #f8f9fa;
+}
+
+body.dark-mode .output pre {
+    color: #f8f9fa;
 }
