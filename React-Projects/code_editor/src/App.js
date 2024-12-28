@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpand, faCompress } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './components/Navbar';
 import CodeEditor from './components/CodeEditor';
 import Login from './components/Login';
@@ -130,7 +132,7 @@ const App = () => {
                                 setActiveSection={setActiveSection}
                                 isSidebarOpen={isSidebarOpen}
                             />
-                            <div className={`output-area ${isMaximized ? 'maximized' : ''}`}>
+                            <div className={`output-area ${isMaximized ? 'maximized' : ''}`} style={{ position: 'relative' }}>
                                 <h2 style={{ textAlign: 'center', fontFamily: 'Algerian', color: 'Highlight' }}>Output</h2>
                                 <iframe
                                     title="output"
@@ -138,25 +140,26 @@ const App = () => {
                                     sandbox="allow-scripts"
                                     style={{
                                         width: '100%',
-                                        height: isMaximized ? '100vh' : '500px', // Toggle height between 100vh and 300px
+                                        height: isMaximized ? '100vh' : '500px',
                                         border: '1px solid #ccc',
-                                        transition: 'height 0.3s ease-in-out', // Smooth transition for height change
+                                        transition: 'height 0.3s ease-in-out',
                                     }}
                                     loading="lazy"
                                 />
-                                {/* Full Screen Toggle Button */}
-                                <button
+                                {/* Full Screen Toggle Icon */}
+                                <FontAwesomeIcon
+                                    icon={isMaximized ? faCompress : faExpand}
                                     onClick={toggleMaximize}
-                                    className="btn btn-secondary"
                                     style={{
                                         position: 'absolute',
-                                        top: '10px',
+                                        top: '1px',
                                         right: '10px',
+                                        fontSize: '30px',
+                                        cursor: 'pointer',
+                                        color: '#007bff',
                                         zIndex: '10',
                                     }}
-                                >
-                                    {isMaximized ? 'Exit Full Screen' : 'Full Screen'}
-                                </button>
+                                />
                             </div>
                         </>
                     } />
