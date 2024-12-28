@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update the import here
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import CodeEditor from './components/CodeEditor';
@@ -37,6 +37,7 @@ const App = () => {
     const [customSections, setCustomSections] = useState([]);
     const [activeSection, setActiveSection] = useState(initialSections[0].title);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isMaximized, setIsMaximized] = useState(false);
 
     const addSection = () => {
         if (customSections.length < 3) {
@@ -88,6 +89,10 @@ const App = () => {
         setIsSidebarOpen(prev => !prev);
     };
 
+    const toggleMaximize = () => {
+        setIsMaximized(prev => !prev);
+    };
+
     return (
         <Router>
             <div className="App">
@@ -125,15 +130,33 @@ const App = () => {
                                 setActiveSection={setActiveSection}
                                 isSidebarOpen={isSidebarOpen}
                             />
-                            <div className="output-area">
+                            <div className={`output-area ${isMaximized ? 'maximized' : ''}`}>
                                 <h2 style={{ textAlign: 'center', fontFamily: 'Algerian', color: 'Highlight' }}>Output</h2>
                                 <iframe
                                     title="output"
                                     srcDoc={generateOutput()}
                                     sandbox="allow-scripts"
-                                    style={{ width: '100%', height: '300px', border: '1px solid #ccc' }}
+                                    style={{
+                                        width: '100%',
+                                        height: isMaximized ? '100vh' : '500px', // Toggle height between 100vh and 300px
+                                        border: '1px solid #ccc',
+                                        transition: 'height 0.3s ease-in-out', // Smooth transition for height change
+                                    }}
                                     loading="lazy"
                                 />
+                                {/* Full Screen Toggle Button */}
+                                <button
+                                    onClick={toggleMaximize}
+                                    className="btn btn-secondary"
+                                    style={{
+                                        position: 'absolute',
+                                        top: '10px',
+                                        right: '10px',
+                                        zIndex: '10',
+                                    }}
+                                >
+                                    {isMaximized ? 'Exit Full Screen' : 'Full Screen'}
+                                </button>
                             </div>
                         </>
                     } />
